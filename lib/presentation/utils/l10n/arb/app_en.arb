@@ -1,0 +1,12 @@
+{
+  "notFoundNavigation": "403",
+  "noInternet": "You don''t have internet connection.",
+  "mainMenuSkinTypeTitle": "Learn your skin type",
+  "mainMenuSkinTypeDescription": "Learn your skin type to understand how to treat it",
+  "mainMenuDictionaryTitle": "Skincare dictionary",
+  "mainMenuDictionaryDescription": "Find the ingredients in the product",
+  "mainMenuTipsTitle": "Skincare tips",
+  "mainMenuTipsDescription": "Valuble tips for your skin",
+  "mainMenuRoutineTitle": "What is skincare routine?",
+  "mainMenuRoutineDescription": "Sort the products correctly"
+}

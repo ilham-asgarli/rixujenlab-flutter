@@ -1,0 +1,172 @@
+name: template
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+
+scripts: derry.yaml
+
+isar_version: &isar_version ^3.1.0+1
+
+# flutter pub outdated
+# flutter pub upgrade
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+  flutter_web_plugins:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+  derry: ^1.5.0
+
+  flutter_native_splash: ^2.3.4
+
+  # logging
+  logger: ^2.0.2+1
+
+  # routing
+  go_router: ^12.0.1
+
+  # responsive
+  device_preview: ^1.1.0
+  responsive_framework: ^1.1.1
+
+  # model generator
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+
+  # asset generator
+  flutter_gen: ^5.3.2
+
+  # dependency injection
+  get_it: ^7.6.4
+  injectable: ^2.3.2
+
+  # state management
+  bloc: ^8.1.2
+  flutter_bloc: ^8.1.3
+  hydrated_bloc: ^9.1.2
+
+  # cache
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.2
+  isar: *isar_version
+  isar_flutter_libs: *isar_version
+
+  http: ^1.1.0
+  dio: ^5.3.3
+  retrofit: ^4.0.3
+
+  dartz: ^0.10.1
+
+  flutter_dotenv: ^5.1.0
+
+  fnv: ^1.0.1
+
+  connectivity_plus: ^5.0.1
+  path_provider: ^2.1.1
+  equatable: ^2.0.5
+  cached_network_image: ^3.3.0
+  animations: ^2.0.8
+  font_awesome_flutter: ^10.6.0
+  flutter_keyboard_visibility: ^5.4.1
+  smooth_page_indicator: ^1.1.0
+  rive: ^0.12.1
+  flare_flutter: ^3.0.2
+  flutter_svg: ^2.0.8
+  lottie: ^2.7.0
+  google_fonts: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+  build_runner:
+  flutter_gen_runner:
+  flutter_launcher_icons: ^0.13.1
+  hive_generator: ^2.0.1
+  isar_generator: *isar_version
+  json_serializable: ^6.7.1
+  go_router_builder: ^2.3.4
+  injectable_generator: ^2.4.1
+  retrofit_generator: ^8.0.2
+
+# dependency_overrides:
+
+flutter_gen:
+  output: lib/utils/gen/
+  line_length: 80
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
+    lottie: true
+
+  #colors:
+    #inputs:
+      #- assets/color/colors.xml
+
+flutter:
+
+  uses-material-design: true
+  # generate: true
+
+  assets:
+    - assets/animation/
+    - assets/audio/
+    - assets/font/
+    - assets/image/
+    - assets/json/
+    - assets/video/
+    - .env.development
+    - .env.production
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+
+  #  w100 Thin, the least thick
+  #  w200 Extra-light
+  #  w300 Light
+  #  w400 Normal / regular / plain
+  #  w500 Medium
+  #  w600 Semi-bold
+  #  w700 Bold
+  #  w800 Extra-bold
+  #  w900 Black, the most thick
+
+  fonts:
+    - family: Hatton
+      fonts:
+        - asset: assets/font/Hatton-Bold.otf
+          weight: 500
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
