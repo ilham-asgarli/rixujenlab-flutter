@@ -9,4 +9,11 @@ abstract class RouterConstants {
   static const notFound = "/404";
   static const home = "/";
   static const signIn = "/signIn";
+  static const signUp = "/signUp";
+  static const dictionary = "dictionary";
+  static const learnType = "learnType";
+  static const routines = "routines";
+  static const tips = "tips";
+  static const myType = "myType";
+  static const moreTips = "moreTips";
 }

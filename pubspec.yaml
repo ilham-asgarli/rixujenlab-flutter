@@ -70,7 +70,7 @@ dependencies:
 
   dartz: ^0.10.1
 
-  flutter_dotenv: ^5.1.0
+  envied: ^0.3.0+3
 
   fnv: ^1.0.1
 
@@ -102,6 +102,7 @@ dev_dependencies:
   go_router_builder: ^2.3.4
   injectable_generator: ^2.4.1
   retrofit_generator: ^8.0.3
+  envied_generator: ^0.3.0+3
 
 # dependency_overrides:
 

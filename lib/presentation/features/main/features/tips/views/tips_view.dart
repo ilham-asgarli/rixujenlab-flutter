@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../view-models/tips_view_model.dart';
+
 class TipsView extends StatelessWidget {
-  const TipsView({super.key});
+  final TipsViewModel tipsViewModel;
+
+  const TipsView({
+    super.key,
+    required this.tipsViewModel,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/di/injectable.dart';
 import '../../../utils/gen/assets.gen.dart';
+import '../config/router/config_router.dart';
 import '../constants/enums/app_enum.dart';
 import '../l10n/gen/app_localizations.dart';
 import 'context_extension.dart';
@@ -59,5 +60,12 @@ extension MainMenuExtension on MainMenu {
         MainMenu.dictionary => true,
         MainMenu.tips => false,
         MainMenu.routine => true,
+      };
+
+  void onTap(context) => switch (this) {
+        MainMenu.skinType => LearnTypeViewRoute().go(context),
+        MainMenu.dictionary => DictionaryViewRoute().go(context),
+        MainMenu.tips => TipsViewRoute().go(context),
+        MainMenu.routine => RoutinesViewRoute().go(context),
       };
 }

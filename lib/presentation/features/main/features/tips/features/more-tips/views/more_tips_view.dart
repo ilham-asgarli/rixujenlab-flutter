@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../view-models/more_tips_view_model.dart';
+
 class MoreTipsView extends StatelessWidget {
-  const MoreTipsView({super.key});
+  final MoreTipsViewModel moreTipsViewModel;
+
+  const MoreTipsView({
+    super.key,
+    required this.moreTipsViewModel,
+  });
 
   @override
   Widget build(BuildContext context) {

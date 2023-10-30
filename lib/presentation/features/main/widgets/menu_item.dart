@@ -16,52 +16,57 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.height * 0.18,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          width: 5,
-          color: mainMenu.borderColor,
+    return InkWell(
+      onTap: () {
+        mainMenu.onTap(context);
+      },
+      child: Container(
+        height: context.height * 0.18,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            width: 5,
+            color: mainMenu.borderColor,
+          ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (mainMenu.iconFirst) buildIcon(context),
-          if (!mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
-          Expanded(
-            flex: 5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                context.dynamicVerticalSpace(0.02),
-                Text(
-                  mainMenu.title.toUpperCase(),
-                  style: AppTypography.hattonFont.copyWith(
-                    fontSize: 16,
-                  ),
-                ),
-                Text(
-                  mainMenu.description,
-                  style: GoogleFonts.montserrat(
-                    fontSize: 12,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Expanded(
-                  child: SizedBox(
-                    child: Align(
-                      child: mainMenu.icon,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (mainMenu.iconFirst) buildIcon(context),
+            if (!mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
+            Expanded(
+              flex: 5,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  context.dynamicVerticalSpace(0.02),
+                  Text(
+                    mainMenu.title.toUpperCase(),
+                    style: AppTypography.hattonFont.copyWith(
+                      fontSize: 16,
                     ),
                   ),
-                ),
-              ],
+                  Text(
+                    mainMenu.description,
+                    style: GoogleFonts.montserrat(
+                      fontSize: 12,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      child: Align(
+                        child: mainMenu.icon,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          if (!mainMenu.iconFirst) buildIcon(context),
-          if (mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
-        ],
+            if (!mainMenu.iconFirst) buildIcon(context),
+            if (mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
+          ],
+        ),
       ),
     );
   }
