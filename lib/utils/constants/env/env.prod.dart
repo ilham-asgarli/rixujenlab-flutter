@@ -8,8 +8,4 @@ part 'env.prod.g.dart';
   path: "assets/env/.env.prod",
   obfuscate: true,
 )
-class ProdEnv implements Env {
-  @override
-  @EnviedField()
-  final String KEY = _ProdEnv.KEY;
-}
+class ProdEnv implements Env {}

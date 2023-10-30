@@ -8,8 +8,4 @@ part 'env.dev.g.dart';
   path: "assets/env/.env.dev",
   obfuscate: true,
 )
-class DevEnv implements Env {
-  @override
-  @EnviedField()
-  final String KEY = _DevEnv.KEY;
-}
+class DevEnv implements Env {}

@@ -1,3 +1,1 @@
-abstract class Env {
-  String get KEY;
-}
+abstract class Env {}
