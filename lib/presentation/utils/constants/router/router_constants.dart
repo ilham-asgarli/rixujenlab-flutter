@@ -8,4 +8,5 @@ the three routes /a, /a/b, and /a/b/c loaded, in that order.
 abstract class RouterConstants {
   static const notFound = "/404";
   static const home = "/";
+  static const signIn = "/signIn";
 }

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../utils/di/injectable.dart';
 import '../../../features/main/views/main_view.dart';
+import '../../../features/sign-in/views/sign_in_view.dart';
 import '../../constants/router/router_constants.dart';
 
 part 'config_router.g.dart';
@@ -21,6 +22,20 @@ class MainViewRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) {
     return MainView(
       mainViewModel: getIt(),
+    );
+  }
+}
+
+@TypedGoRoute<SignInViewRoute>(
+  path: RouterConstants.signIn,
+  routes: [],
+)
+@immutable
+class SignInViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return SignInView(
+      signInViewModel: getIt(),
     );
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/gen/assets.gen.dart';
-
 class Background1 extends StatelessWidget {
   final Widget? child;
 
@@ -15,12 +13,12 @@ class Background1 extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
+      /*decoration: BoxDecoration(
         image: DecorationImage(
-          image: Assets.image.icBackgound1.provider(),
+          image: ,
           fit: BoxFit.cover,
         ),
-      ),
+      ),*/
       child: child,
     );
   }

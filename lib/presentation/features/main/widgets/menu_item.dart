@@ -28,16 +28,7 @@ class MenuItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (mainMenu.iconFirst)
-            Expanded(
-              flex: 4,
-              child: Align(
-                alignment: AlignmentDirectional.centerEnd,
-                child: mainMenu.womanIcon.image(
-                  height: context.height * 0.16,
-                ),
-              ),
-            ),
+          if (mainMenu.iconFirst) buildIcon(context),
           if (!mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
           Expanded(
             flex: 5,
@@ -68,18 +59,23 @@ class MenuItem extends StatelessWidget {
               ],
             ),
           ),
-          if (!mainMenu.iconFirst)
-            Expanded(
-              flex: 4,
-              child: Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: mainMenu.womanIcon.image(
-                  height: context.height * 0.16,
-                ),
-              ),
-            ),
+          if (!mainMenu.iconFirst) buildIcon(context),
           if (mainMenu.iconFirst) context.dynamicHorizontalSpace(0.01),
         ],
+      ),
+    );
+  }
+
+  Widget buildIcon(BuildContext context) {
+    return Expanded(
+      flex: 4,
+      child: Align(
+        alignment: mainMenu.iconFirst
+            ? AlignmentDirectional.centerEnd
+            : AlignmentDirectional.centerStart,
+        child: mainMenu.womanIcon.image(
+          height: context.height * 0.16,
+        ),
       ),
     );
   }
