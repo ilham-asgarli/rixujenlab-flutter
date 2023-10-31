@@ -55,15 +55,16 @@ class RoutinesView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    for (var routinesStep in RoutinesSteps.values)
-                      Column(
-                        children: [
-                          RoutineItem(
-                            routinesSteps: routinesStep,
-                          ),
-                          context.dynamicVerticalSpace(0.01),
-                        ],
-                      ),
+                    ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return RoutineItem(
+                          routinesSteps: RoutinesSteps.values[index],
+                        );
+                      },
+                      itemCount: RoutinesSteps.values.length,
+                    ),
                   ],
                 ),
               ),

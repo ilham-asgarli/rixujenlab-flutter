@@ -17,13 +17,12 @@ class RoutineItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.height * 0.12,
+      height: context.height * 0.13,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (!routinesSteps.iconFirst) buildIndex(),
+          if (!routinesSteps.iconFirst) buildIndex(context),
           if (routinesSteps.iconFirst) buildIcon(context),
-          if (!routinesSteps.iconFirst) context.dynamicHorizontalSpace(0.01),
           Expanded(
             flex: 14,
             child: Column(
@@ -52,22 +51,29 @@ class RoutineItem extends StatelessWidget {
             ),
           ),
           if (!routinesSteps.iconFirst) buildIcon(context),
-          if (routinesSteps.iconFirst) context.dynamicHorizontalSpace(0.01),
-          if (routinesSteps.iconFirst) buildIndex(),
+          if (routinesSteps.iconFirst) buildIndex(context),
         ],
       ),
     );
   }
 
-  Expanded buildIndex() {
+  Widget buildIndex(BuildContext context) {
     return Expanded(
       flex: 15,
-      child: Text(
-        routinesSteps.myIndex,
-        style: TextStyle(
-          fontSize: 30,
-        ),
-        textAlign: routinesSteps.iconFirst ? TextAlign.start : TextAlign.end,
+      child: Row(
+        mainAxisAlignment: routinesSteps.iconFirst
+            ? MainAxisAlignment.start
+            : MainAxisAlignment.end,
+        children: [
+          if (routinesSteps.iconFirst) context.dynamicHorizontalSpace(0.03),
+          Text(
+            routinesSteps.myIndex,
+            style: const TextStyle(
+              fontSize: 30,
+            ),
+          ),
+          if (!routinesSteps.iconFirst) context.dynamicHorizontalSpace(0.03),
+        ],
       ),
     );
   }
@@ -76,10 +82,12 @@ class RoutineItem extends StatelessWidget {
     return Expanded(
       flex: 15,
       child: Align(
-        alignment: routinesSteps.iconFirst ? AlignmentDirectional.centerEnd : AlignmentDirectional.centerStart,
+        alignment: routinesSteps.iconFirst
+            ? AlignmentDirectional.centerEnd
+            : AlignmentDirectional.centerStart,
         child: CircleAvatar(
-          radius: context.height * 3,
-          backgroundColor: Color(0xFFB1E6FA),
+          radius: double.infinity,
+          backgroundColor: const Color(0xFFB1E6FA),
           child: routinesSteps.womanIcon.image(),
         ),
       ),

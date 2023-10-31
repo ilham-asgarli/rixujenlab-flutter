@@ -30,15 +30,19 @@ class MainView extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var mainMenu in MainMenu.values)
-                      Column(
-                        children: [
-                          MenuItem(
-                            mainMenu: mainMenu,
-                          ),
-                          context.dynamicVerticalSpace(0.01),
-                        ],
-                      ),
+                    ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return MenuItem(
+                          mainMenu: MainMenu.values[index],
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return context.dynamicVerticalSpace(0.01);
+                      },
+                      itemCount: MainMenu.values.length,
+                    ),
                   ],
                 ),
               ),

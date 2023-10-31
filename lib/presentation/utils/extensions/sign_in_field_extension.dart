@@ -1,12 +1,22 @@
+import 'package:flutter/widgets.dart';
+
 import '../../../utils/di/injectable.dart';
 import '../constants/enums/app_enum.dart';
 import '../l10n/gen/app_localizations.dart';
 
-extension SignInFieldExtension on SignUpField {
+extension SignInFieldExtension on SignInField {
   String get hintText => switch (this) {
-        SignUpField.fullName => getIt<AppLocalizations>().fullName,
-        SignUpField.userName => getIt<AppLocalizations>().userName,
-        SignUpField.email => getIt<AppLocalizations>().email,
-        SignUpField.password => getIt<AppLocalizations>().password,
+        SignInField.email => getIt<AppLocalizations>().email,
+        SignInField.password => getIt<AppLocalizations>().password,
+      };
+
+  bool get obscureText => switch (this) {
+        SignInField.email => false,
+        SignInField.password => true,
+      };
+
+  TextInputType get keyboardType => switch (this) {
+        SignInField.email => TextInputType.emailAddress,
+        SignInField.password => TextInputType.text,
       };
 }

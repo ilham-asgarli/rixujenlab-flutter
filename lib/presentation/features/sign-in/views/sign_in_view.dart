@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import '../../../../utils/gen/assets.gen.dart';
+import '../../../../utils/gen/fonts.gen.dart';
 import '../../../components/textfield/sign_text_field.dart';
 import '../../../utils/constants/enums/app_enum.dart';
 import '../../../utils/extensions/context_extension.dart';
-import '../../../utils/extensions/sign_up_field_extension.dart';
+import '../../../utils/extensions/sign_in_field_extension.dart';
 import '../../../widgets/app_name.dart';
 import '../view-models/sign_in_view_model.dart';
 
@@ -40,6 +41,7 @@ class SignInView extends StatelessWidget {
                         Text(
                           context.l10n.signIn,
                           style: const TextStyle(
+                            fontFamily: FontFamily.kudryashevDisplaySans,
                             fontSize: 28,
                             color: Color(0xFF523721),
                           ),
@@ -48,15 +50,20 @@ class SignInView extends StatelessWidget {
                         Divider(
                           thickness: 2,
                           color: const Color(0xFF523721),
-                          endIndent: context.dynamicWidth(0.05),
-                          indent: context.dynamicWidth(0.05),
+                          endIndent: context.dynamicWidth(0.1),
+                          indent: context.dynamicWidth(0.1),
                         ),
                         context.dynamicVerticalSpace(0.08),
                         ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
+                            SignInField signInField = SignInField.values[index];
+
                             return SignTextField(
-                              hintText: SignInField.values[index].hintText,
+                              hintText: signInField.hintText,
+                              keyboardType: signInField.keyboardType,
+                              obscureText: signInField.obscureText,
                             );
                           },
                           separatorBuilder: (context, index) =>
