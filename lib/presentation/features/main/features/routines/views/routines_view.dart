@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../../utils/gen/assets.gen.dart';
+import '../../../../../../utils/gen/fonts.gen.dart';
 import '../../../../../utils/constants/enums/app_enum.dart';
 import '../../../../../utils/extensions/context_extension.dart';
 import '../../../../../widgets/bg_app_name.dart';
@@ -32,24 +34,27 @@ class RoutinesView extends StatelessWidget {
                     context.dynamicVerticalSpace(0.04),
                     Text(
                       context.l10n.skincare,
-                      style: TextStyle(
-                        fontSize: 30,
+                      style: const TextStyle(
+                        fontFamily: FontFamily.bugakiRegular,
+                        fontSize: 26.3,
                         height: 1.0,
                       ),
                     ),
                     RichText(
                       text: TextSpan(
-                        text: context.l10n.routines,
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Color(0xFFFF66C3),
+                        text: "${context.l10n.routines} ",
+                        style: GoogleFonts.mrDafoe(
+                          fontSize: 27,
+                          color: const Color(0xFFFF66C3),
                           height: 1.0,
                         ),
                         children: [
                           TextSpan(
                             text: context.l10n.steps,
                             style: const TextStyle(
+                              fontFamily: FontFamily.argentCF,
                               color: Colors.black,
+                              fontSize: 26.3,
                             ),
                           ),
                         ],
