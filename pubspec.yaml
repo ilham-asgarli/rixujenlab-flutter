@@ -166,6 +166,9 @@ flutter:
     - family: Kudryashev Display Sans
       fonts:
         - asset: assets/font/Kudryashev Display Sans-Regular.otf
+    - family: Benedict
+      fonts:
+        - asset: assets/font/Benedict-Regular.otf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

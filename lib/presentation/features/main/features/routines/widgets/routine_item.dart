@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../../../utils/gen/fonts.gen.dart';
 import '../../../../../utils/constants/enums/app_enum.dart';
-import '../../../../../utils/constants/typography/app_typograpy.dart';
 import '../../../../../utils/extensions/context_extension.dart';
 import '../../../../../utils/extensions/routines_steps_extension.dart';
 
@@ -31,9 +30,12 @@ class RoutineItem extends StatelessWidget {
               children: [
                 Flexible(
                   child: Text(
-                    routinesSteps.title.toUpperCase(),
-                    style: AppTypography.hattonFont.copyWith(
+                    routinesSteps.title,
+                    style: const TextStyle(
+                      fontFamily: FontFamily.theSeasons,
+                      fontStyle: FontStyle.italic,
                       fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.start,
                   ),
@@ -41,8 +43,10 @@ class RoutineItem extends StatelessWidget {
                 Flexible(
                   child: Text(
                     routinesSteps.description,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 12,
+                    style: const TextStyle(
+                      fontFamily: FontFamily.theSeasons,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 13,
                     ),
                     textAlign: TextAlign.start,
                   ),
@@ -69,7 +73,8 @@ class RoutineItem extends StatelessWidget {
           Text(
             routinesSteps.myIndex,
             style: const TextStyle(
-              fontSize: 30,
+              fontFamily: FontFamily.benedict,
+              fontSize: 36,
             ),
           ),
           if (!routinesSteps.iconFirst) context.dynamicHorizontalSpace(0.03),
