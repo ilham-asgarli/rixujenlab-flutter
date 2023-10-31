@@ -1,4 +1,5 @@
 {
+  "appName": "RixujenLab",
   "notFoundNavigation": "403",
   "noInternet": "You don''t have internet connection.",
   "mainMenuSkinTypeTitle": "Learn your skin type",
@@ -8,5 +9,26 @@
   "mainMenuTipsTitle": "Skincare tips",
   "mainMenuTipsDescription": "Valuble tips for your skin",
   "mainMenuRoutineTitle": "What is skincare routine?",
-  "mainMenuRoutineDescription": "Sort the products correctly"
+  "mainMenuRoutineDescription": "Sort the products correctly",
+  "signUp": "Enter your information",
+  "fullName": "Full Name",
+  "userName": "Username",
+  "email": "Email",
+  "password": "Password",
+  "signIn": "Log in",
+  "skincare": "SKINCARE",
+  "routines": "Routines",
+  "steps": "steps",
+  "routinesStepCleanserTitle": "Cleanser",
+  "routinesStepCleanserDescription": "Wash your face twice (day&night) a day.",
+  "routinesStepTonerTitle": "Toner",
+  "routinesStepTonerDescription": "Apply to cleansed skin.",
+  "routinesStepFaceSerumTitle": "FaceSerum",
+  "routinesStepFaceSerumDescription": "Apply with upward movements",
+  "routinesStepMoisturizerTitle": "Moisturizer",
+  "routinesStepMoisturizerDescription": "Apply it all over your skin with your fingertips.",
+  "routinesStepEyeCreamTitle": "Eye Cream",
+  "routinesStepEyeCreamDescription": "Apply with your ring fingers.",
+  "routinesStepSunscreenTitle": "Sunscreen",
+  "routinesStepSunscreenDescription": "Apply every day 15 minutes before going out."
 }

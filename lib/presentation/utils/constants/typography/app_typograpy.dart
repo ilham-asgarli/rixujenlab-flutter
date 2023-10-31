@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../utils/gen/fonts.gen.dart';
+
 abstract class AppTypography {
   static const bodyMedium = TextStyle(
     fontSize: 14,
@@ -11,5 +13,5 @@ abstract class AppTypography {
     fontWeight: FontWeight.bold,
   );
 
-  static const hattonFont = TextStyle(fontFamily: "Hatton");
+  static const hattonFont = TextStyle(fontFamily: FontFamily.hatton);
 }

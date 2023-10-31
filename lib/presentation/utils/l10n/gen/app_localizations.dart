@@ -91,6 +91,12 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
+  /// No description provided for @appName.
+  ///
+  /// In en, this message translates to:
+  /// **'RixujenLab'**
+  String get appName;
+
   /// No description provided for @notFoundNavigation.
   ///
   /// In en, this message translates to:
@@ -150,6 +156,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sort the products correctly'**
   String get mainMenuRoutineDescription;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your information'**
+  String get signUp;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @userName.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get userName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get signIn;
+
+  /// No description provided for @skincare.
+  ///
+  /// In en, this message translates to:
+  /// **'SKINCARE'**
+  String get skincare;
+
+  /// No description provided for @routines.
+  ///
+  /// In en, this message translates to:
+  /// **'Routines'**
+  String get routines;
+
+  /// No description provided for @steps.
+  ///
+  /// In en, this message translates to:
+  /// **'steps'**
+  String get steps;
+
+  /// No description provided for @routinesStepCleanserTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleanser'**
+  String get routinesStepCleanserTitle;
+
+  /// No description provided for @routinesStepCleanserDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Wash your face twice (day&night) a day.'**
+  String get routinesStepCleanserDescription;
+
+  /// No description provided for @routinesStepTonerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Toner'**
+  String get routinesStepTonerTitle;
+
+  /// No description provided for @routinesStepTonerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply to cleansed skin.'**
+  String get routinesStepTonerDescription;
+
+  /// No description provided for @routinesStepFaceSerumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'FaceSerum'**
+  String get routinesStepFaceSerumTitle;
+
+  /// No description provided for @routinesStepFaceSerumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply with upward movements'**
+  String get routinesStepFaceSerumDescription;
+
+  /// No description provided for @routinesStepMoisturizerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Moisturizer'**
+  String get routinesStepMoisturizerTitle;
+
+  /// No description provided for @routinesStepMoisturizerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply it all over your skin with your fingertips.'**
+  String get routinesStepMoisturizerDescription;
+
+  /// No description provided for @routinesStepEyeCreamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Eye Cream'**
+  String get routinesStepEyeCreamTitle;
+
+  /// No description provided for @routinesStepEyeCreamDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply with your ring fingers.'**
+  String get routinesStepEyeCreamDescription;
+
+  /// No description provided for @routinesStepSunscreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunscreen'**
+  String get routinesStepSunscreenTitle;
+
+  /// No description provided for @routinesStepSunscreenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply every day 15 minutes before going out.'**
+  String get routinesStepSunscreenDescription;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

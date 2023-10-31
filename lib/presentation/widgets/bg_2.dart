@@ -3,12 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import '../../utils/gen/assets.gen.dart';
-import 'bacground_1.dart';
+import 'bg_1.dart';
 
-class Background2 extends StatelessWidget {
+class Bg2 extends StatelessWidget {
   final Widget? child;
 
-  const Background2({
+  const Bg2({
     super.key,
     this.child,
   });
@@ -21,7 +21,7 @@ class Background2 extends StatelessWidget {
           builder: (context, constraints) {
             var height = constraints.biggest.height;
 
-            return Background1(
+            return Bg1(
               child: Stack(
                 children: [
                   Positioned(
