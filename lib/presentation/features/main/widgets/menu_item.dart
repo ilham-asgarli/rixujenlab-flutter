@@ -17,7 +17,7 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap: () async {
         mainMenu.onTap(context);
       },
       child: Container(
