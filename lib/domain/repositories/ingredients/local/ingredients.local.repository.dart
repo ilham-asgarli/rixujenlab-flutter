@@ -1,6 +1,6 @@
-import '../../../../data/models/ingredients_model.dart';
+import '../../../entities/ingredients_entity.dart';
 
 abstract class IngredientsLocalRepository {
-  Future<List<IngredientsModel>> getIngredients({String? search, int? limit});
+  Future<List<IngredientsEntity>> getIngredients({String? search, int? limit});
   Future<void> putIngredients();
 }

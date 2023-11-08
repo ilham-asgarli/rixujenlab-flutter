@@ -6,12 +6,14 @@ class SignTextField extends StatelessWidget {
   final String hintText;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final TextEditingController? textEditingController;
 
   const SignTextField({
     super.key,
     required this.hintText,
     this.keyboardType,
     this.obscureText = false,
+    this.textEditingController,
   });
 
   @override
@@ -29,6 +31,7 @@ class SignTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextFormField(
+        controller: textEditingController,
         keyboardType: keyboardType,
         obscureText: obscureText,
         style: const TextStyle(

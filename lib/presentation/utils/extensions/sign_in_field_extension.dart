@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../../utils/di/injectable.dart';
+import '../../features/sign-in/view-models/sign_in_view_model.dart';
 import '../constants/enums/app_enum.dart';
 import '../l10n/gen/app_localizations.dart';
 
@@ -18,5 +19,10 @@ extension SignInFieldExtension on SignInField {
   TextInputType get keyboardType => switch (this) {
         SignInField.email => TextInputType.emailAddress,
         SignInField.password => TextInputType.text,
+      };
+
+  TextEditingController get controller => switch (this) {
+        SignInField.email => getIt<SignInViewModel>().emailController,
+        SignInField.password => getIt<SignInViewModel>().passwordController,
       };
 }

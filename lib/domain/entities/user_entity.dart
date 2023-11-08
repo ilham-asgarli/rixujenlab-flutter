@@ -7,12 +7,11 @@ part 'user_entity.g.dart';
 
 @Freezed(copyWith: false, equal: false)
 class UserEntity with _$UserEntity {
-  @DateTimeConverter()
   const factory UserEntity({
-    required String id,
     required String email,
     required String password,
-    required DateTime createdAt,
+    required String fullName,
+    required String userName,
   }) = _UserEntity;
 
   factory UserEntity.fromJson(Map<String, Object?> json) =>

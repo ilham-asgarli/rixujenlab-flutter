@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../../utils/di/injectable.dart';
+import '../../features/sign-up/view-models/sign_up_view_model.dart';
 import '../constants/enums/app_enum.dart';
 import '../l10n/gen/app_localizations.dart';
 
@@ -24,5 +25,12 @@ extension SignUpFieldExtension on SignUpField {
         SignUpField.userName => TextInputType.text,
         SignUpField.email => TextInputType.emailAddress,
         SignUpField.password => TextInputType.text,
+      };
+
+  TextEditingController get controller => switch (this) {
+        SignUpField.fullName => getIt<SignUpViewModel>().fullNameController,
+        SignUpField.userName => getIt<SignUpViewModel>().userNameController,
+        SignUpField.email => getIt<SignUpViewModel>().emailController,
+        SignUpField.password => getIt<SignUpViewModel>().passwordController,
       };
 }

@@ -1,1 +1,3 @@
-abstract class SharedPreferencesConstants {}
+abstract class SharedPreferencesConstants {
+  static const String signedIn = "signedIn";
+}

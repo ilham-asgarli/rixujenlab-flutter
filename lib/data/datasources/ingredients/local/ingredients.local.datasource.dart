@@ -15,6 +15,8 @@ class IngredientsLocalDataSource {
   });
 
   Future<void> putIngredients() async {
+    if ((await isar.ingredientsModels.count()) > 0) return;
+
     await isar.writeTxn(() async {
       await isar.ingredientsModels.importJsonRaw(
           (await rootBundle.load(Assets.json.ingredients))

@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 
+import '../../../../domain/entities/ingredients_entity.dart';
 import '../../../../domain/repositories/ingredients/local/ingredients.local.repository.dart';
 import '../../../datasources/ingredients/local/ingredients.local.datasource.dart';
 import '../../../models/ingredients_model.dart';
@@ -14,7 +15,7 @@ class IngredientsLocalRepositoryImpl implements IngredientsLocalRepository {
   });
 
   @override
-  Future<List<IngredientsModel>> getIngredients({
+  Future<List<IngredientsEntity>> getIngredients({
     String? search,
     int? limit,
   }) async {
@@ -24,7 +25,9 @@ class IngredientsLocalRepositoryImpl implements IngredientsLocalRepository {
       limit: limit,
     );
 
-    return ingredientModels;
+    return ingredientModels
+        .map((e) => IngredientsEntity(name: e.name, description: e.description))
+        .toList();
   }
 
   @override

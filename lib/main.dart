@@ -1,10 +1,13 @@
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
+import 'firebase_options.dart';
 import 'presentation/features/my-app/views/my_app_view.dart';
 import 'presentation/utils/helpers/http/my_http_overrides.dart';
 import 'presentation/utils/helpers/universal/universal_helper.dart'
@@ -25,6 +28,12 @@ void main() async {
 Future<void> init() async {
   HttpOverrides.global = MyHttpOverrides();
   await Future.wait([
+    Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ),
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]),
     configureDependencies(),
     universal.get().init(),
   ]);

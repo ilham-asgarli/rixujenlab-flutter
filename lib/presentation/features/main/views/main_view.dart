@@ -18,37 +18,64 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: BgAppName(
-          child: Stack(
-            children: [
-              Assets.image.icBg2.svg(fit: BoxFit.fill),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: context.dynamicWidth(0.01),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ListView.separated(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return MenuItem(
-                          mainMenu: MainMenu.values[index],
-                        );
-                      },
-                      separatorBuilder: (context, index) {
-                        return context.dynamicVerticalSpace(0.01);
-                      },
-                      itemCount: MainMenu.values.length,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+      drawer: Drawer(
+        child: Stack(
+          children: [
+            Assets.image.icBg.svg(fit: BoxFit.fill),
+          ],
         ),
+      ),
+      body: Builder(
+        builder: (context) {
+          return SafeArea(
+            child: BgAppName(
+              child: Stack(
+                children: [
+                  Assets.image.icBg2.svg(fit: BoxFit.fill),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.dynamicWidth(0.01),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: context.dynamicWidth(0.03),
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                Scaffold.of(context).openDrawer();
+                              },
+                              child: Assets.image.icUser.svg(
+                                height: context.dynamicHeight(0.05),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return MenuItem(
+                              mainMenu: MainMenu.values[index],
+                            );
+                          },
+                          separatorBuilder: (context, index) {
+                            return context.dynamicVerticalSpace(0.01);
+                          },
+                          itemCount: MainMenu.values.length,
+                        ),
+                        const Spacer(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }

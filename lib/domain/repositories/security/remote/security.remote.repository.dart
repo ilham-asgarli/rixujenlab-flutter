@@ -1,5 +1,17 @@
-import '../../../../data/models/user_model.dart';
+import '../../../entities/user_entity.dart';
 
 abstract class SecurityRemoteRepository {
-  Future<UserModel> getUser({required String id});
+  Future<UserEntity> getUser({required String id});
+
+  Future<void> signUp({
+    required String email,
+    required String password,
+    required String fullName,
+    required String userName,
+  });
+
+  Future<bool> signIn({
+    required String email,
+    required String password,
+  });
 }

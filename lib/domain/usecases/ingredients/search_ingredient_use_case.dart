@@ -1,17 +1,17 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../data/models/ingredients_model.dart';
 import '../../../data/utils/exceptions/data.exception.dart';
 import '../../../data/utils/exceptions/local.exception.dart';
 import '../../../data/utils/exceptions/local/custom.exception.dart';
 import '../../../data/utils/exceptions/local/not_found.exception.dart';
+import '../../entities/ingredients_entity.dart';
 import '../../repositories/ingredients/local/ingredients.local.repository.dart';
 import '../../utils/usecase.dart';
 
 @LazySingleton()
 class SearchIngredientUseCase
-    extends UseCase<List<IngredientsModel>, SearchIngredientUseCaseParams> {
+    extends UseCase<List<IngredientsEntity>, SearchIngredientUseCaseParams> {
   final IngredientsLocalRepository ingredientsLocalRepository;
 
   const SearchIngredientUseCase({
@@ -19,7 +19,7 @@ class SearchIngredientUseCase
   });
 
   @override
-  Future<Either<DataException, List<IngredientsModel>>> call(
+  Future<Either<DataException, List<IngredientsEntity>>> call(
       [SearchIngredientUseCaseParams? params]) async {
     try {
       var response = await ingredientsLocalRepository.getIngredients(

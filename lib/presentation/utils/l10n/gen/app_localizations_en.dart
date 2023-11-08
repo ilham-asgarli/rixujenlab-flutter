@@ -29,7 +29,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mainMenuTipsTitle => 'Skincare tips';
 
   @override
-  String get mainMenuTipsDescription => 'Valuble tips for your skin';
+  String get mainMenuTipsDescription => 'Valuable tips for your skin';
 
   @override
   String get mainMenuRoutineTitle => 'What is skincare routine?';
@@ -38,7 +38,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mainMenuRoutineDescription => 'Sort the products correctly';
 
   @override
-  String get signUp => 'Enter your information';
+  String get signUpTitle => 'Enter your information';
+
+  @override
+  String get signInTitle => 'Log in';
+
+  @override
+  String get signUp => 'Sign Up';
+
+  @override
+  String get signIn => 'Sign In';
 
   @override
   String get fullName => 'Full Name';
@@ -51,9 +60,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get password => 'Password';
-
-  @override
-  String get signIn => 'Log in';
 
   @override
   String get skincare => 'SKINCARE';
@@ -99,4 +105,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get routinesStepSunscreenDescription => 'Apply every day 15 minutes before going out.';
+
+  @override
+  String get skincareDictionaryTitle => 'Skincare';
+
+  @override
+  String get skincareDictionaryDescription => 'Dictionary';
+
+  @override
+  String get skincareDictionaryPhoto => 'TAKE A PHOTO';
+
+  @override
+  String get skincareDictionaryUpload => 'UPLOAD PHOTO';
+
+  @override
+  String get skincareDictionarySearch => 'SEARCH MANUALLY';
+
+  @override
+  String get tip1 => 'Avoid products with artificial colorants and synthetic fragrances.';
+
+  @override
+  String get tip2 => 'Hydrate your skin';
+
+  @override
+  String get tip3 => 'Eat skin-friendly food';
+
+  @override
+  String get tip4 => 'Limit sun exposure';
+
+  @override
+  String get tip5 => 'Protect skin at all times';
 }

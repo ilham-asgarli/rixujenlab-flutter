@@ -11,6 +11,7 @@ import '../../../features/main/features/tips/views/tips_view.dart';
 import '../../../features/main/views/main_view.dart';
 import '../../../features/sign-in/views/sign_in_view.dart';
 import '../../../features/sign-up/views/sign_up_view.dart';
+import '../../constants/enums/app_enum.dart';
 import '../../constants/router/router_constants.dart';
 
 part 'config_router.g.dart';
@@ -130,10 +131,17 @@ class MoreTipsViewRoute extends GoRouteData {
 
 @immutable
 class MyTypeViewRoute extends GoRouteData {
+  final MyType myType;
+
+  const MyTypeViewRoute({
+    required this.myType,
+  });
+
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return MyTypeView(
-      myTypeView: getIt(),
+      myTypeViewModel: getIt(),
+      myType: myType,
     );
   }
 }

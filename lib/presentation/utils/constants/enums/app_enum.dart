@@ -27,3 +27,17 @@ enum RoutinesSteps {
   eyeCream,
   sunScreen,
 }
+
+enum SkincareDictionary {
+  takeAPhoto,
+  uploadPhoto,
+  searchManually,
+}
+
+enum MyType {
+  sensitive,
+  dry,
+  oily,
+  combination,
+  normal,
+}

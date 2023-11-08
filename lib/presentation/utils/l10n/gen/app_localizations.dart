@@ -142,7 +142,7 @@ abstract class AppLocalizations {
   /// No description provided for @mainMenuTipsDescription.
   ///
   /// In en, this message translates to:
-  /// **'Valuble tips for your skin'**
+  /// **'Valuable tips for your skin'**
   String get mainMenuTipsDescription;
 
   /// No description provided for @mainMenuRoutineTitle.
@@ -157,11 +157,29 @@ abstract class AppLocalizations {
   /// **'Sort the products correctly'**
   String get mainMenuRoutineDescription;
 
-  /// No description provided for @signUp.
+  /// No description provided for @signUpTitle.
   ///
   /// In en, this message translates to:
   /// **'Enter your information'**
+  String get signUpTitle;
+
+  /// No description provided for @signInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log in'**
+  String get signInTitle;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
   String get signUp;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
 
   /// No description provided for @fullName.
   ///
@@ -186,12 +204,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password'**
   String get password;
-
-  /// No description provided for @signIn.
-  ///
-  /// In en, this message translates to:
-  /// **'Log in'**
-  String get signIn;
 
   /// No description provided for @skincare.
   ///
@@ -282,6 +294,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Apply every day 15 minutes before going out.'**
   String get routinesStepSunscreenDescription;
+
+  /// No description provided for @skincareDictionaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Skincare'**
+  String get skincareDictionaryTitle;
+
+  /// No description provided for @skincareDictionaryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Dictionary'**
+  String get skincareDictionaryDescription;
+
+  /// No description provided for @skincareDictionaryPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'TAKE A PHOTO'**
+  String get skincareDictionaryPhoto;
+
+  /// No description provided for @skincareDictionaryUpload.
+  ///
+  /// In en, this message translates to:
+  /// **'UPLOAD PHOTO'**
+  String get skincareDictionaryUpload;
+
+  /// No description provided for @skincareDictionarySearch.
+  ///
+  /// In en, this message translates to:
+  /// **'SEARCH MANUALLY'**
+  String get skincareDictionarySearch;
+
+  /// No description provided for @tip1.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid products with artificial colorants and synthetic fragrances.'**
+  String get tip1;
+
+  /// No description provided for @tip2.
+  ///
+  /// In en, this message translates to:
+  /// **'Hydrate your skin'**
+  String get tip2;
+
+  /// No description provided for @tip3.
+  ///
+  /// In en, this message translates to:
+  /// **'Eat skin-friendly food'**
+  String get tip3;
+
+  /// No description provided for @tip4.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit sun exposure'**
+  String get tip4;
+
+  /// No description provided for @tip5.
+  ///
+  /// In en, this message translates to:
+  /// **'Protect skin at all times'**
+  String get tip5;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
