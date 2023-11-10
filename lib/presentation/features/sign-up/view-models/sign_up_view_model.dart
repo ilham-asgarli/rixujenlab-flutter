@@ -7,7 +7,7 @@ import '../../../utils/constants/enums/app_enum.dart';
 import '../../../utils/extensions/sign_up_field_extension.dart';
 import '../state/sign_up_bloc.dart';
 
-@LazySingleton()
+@injectable
 class SignUpViewModel {
   final SignUpBloc signUpBloc = getIt<SignUpBloc>();
   final emailController = TextEditingController();
@@ -20,10 +20,10 @@ class SignUpViewModel {
         signUpBloc.state is! SignUpSuccess) {
       signUpBloc.add(const StartSignUp());
       var res = await getIt<SignUpUseCase>()(SignUpUseCaseParams(
-        email: SignUpField.email.controller.text,
-        password: SignUpField.password.controller.text,
-        fullName: SignUpField.fullName.controller.text,
-        userName: SignUpField.userName.controller.text,
+        email: SignUpField.email.controller(this).text,
+        password: SignUpField.password.controller(this).text,
+        fullName: SignUpField.fullName.controller(this).text,
+        userName: SignUpField.userName.controller(this).text,
       ));
       res.fold(
         (l) => signUpBloc.add(const FinishSignUp(signedUp: false)),

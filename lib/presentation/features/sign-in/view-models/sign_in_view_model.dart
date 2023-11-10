@@ -7,7 +7,7 @@ import '../../../utils/constants/enums/app_enum.dart';
 import '../../../utils/extensions/sign_in_field_extension.dart';
 import '../state/sign_in_bloc.dart';
 
-@LazySingleton()
+@injectable
 class SignInViewModel {
   final SignInBloc signInBloc = getIt<SignInBloc>();
   final emailController = TextEditingController();
@@ -18,8 +18,8 @@ class SignInViewModel {
         signInBloc.state is! SignInSuccess) {
       signInBloc.add(const StartSignIn());
       var res = await getIt<SignInUseCase>()(SignInUseCaseParams(
-        email: SignInField.email.controller.text,
-        password: SignInField.password.controller.text,
+        email: SignInField.email.controller(this).text,
+        password: SignInField.password.controller(this).text,
       ));
       res.fold(
         (l) => signInBloc.add(const FinishSignIn(signedIn: false)),

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../../../../utils/gen/assets.gen.dart';
 import '../../../../../../../../utils/gen/fonts.gen.dart';
 import '../../../../../../../utils/constants/enums/app_enum.dart';
 import '../../../../../../../utils/extensions/context_extension.dart';
+import '../../../../../../../utils/extensions/my_type_extension.dart';
+import '../../../../../../../widgets/bg_app_name.dart';
 import '../view-models/my_type_view_model.dart';
+import '../widgets/type_feature_item.dart';
 
 class MyTypeView extends StatelessWidget {
   final MyTypeViewModel myTypeViewModel;
@@ -20,70 +24,74 @@ class MyTypeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Stack(
-          children: [
-            Assets.image.icBg1.svg(fit: BoxFit.fill),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: context.dynamicWidth(0.10),
+        child: BgAppName(
+          colored: true,
+          child: Stack(
+            children: [
+              Assets.image.icBg1Png.image(
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: double.infinity,
               ),
-              child: Center(
+              SingleChildScrollView(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    context.dynamicVerticalSpace(0.1),
+                    context.dynamicVerticalSpace(0.08),
                     RichText(
                       textAlign: TextAlign.center,
-                      text: const TextSpan(
-                        text: 'SENSITIVE',
-                        style: TextStyle(
+                      text: TextSpan(
+                        text: myType.title,
+                        style: const TextStyle(
                           fontFamily: FontFamily.hatton,
                           fontSize: 30,
                           letterSpacing: 10,
                           color: Color(0xFF532B1C),
+                          height: 1.0,
                         ),
                         children: [
                           TextSpan(
-                            text: '\nSKIN',
-                            style: TextStyle(
+                            text: "\n${context.l10n.skin.toUpperCase()}",
+                            style: GoogleFonts.poppins(
                               letterSpacing: 10,
                               fontSize: 15,
-                              color: Color(0xFF532B1C),
+                              color: const Color(0xFF532B1C),
+                              height: 1.5,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    context.dynamicVerticalSpace(0.08),
-                    Assets.image.icSensitiveSkin
-                        .image(height: context.height * 0.2),
-                    context.dynamicVerticalSpace(0.08),
-                    RichText(
-                      text: const TextSpan(
-                        text: 'Sensitive Skin Definition:',
-                        style: TextStyle(
-                          fontSize: 15,
-                          letterSpacing: 3,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF532B1C),
-                        ),
-                        children: [
-                          TextSpan(
-                            text: ' Tends to overreact to various',
-                            style: TextStyle(
-                              letterSpacing: 3,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: Color(0xFF532B1C),
-                            ),
-                          ),
-                        ],
+                    context.dynamicVerticalSpace(0.06),
+                    Image.asset(
+                      myType.icon,
+                      height: context.height * 0.18,
+                    ),
+                    context.dynamicVerticalSpace(0.06),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: context.dynamicWidth(0.1),
+                      ),
+                      child: ListView.separated(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: TypeFeature.values.length,
+                        itemBuilder: (context, index) {
+                          return TypeFeatureItem(
+                            myType: myType,
+                            typeFeature: TypeFeature.values[index],
+                          );
+                        },
+                        separatorBuilder: (context, index) =>
+                            context.dynamicVerticalSpace(0.02),
                       ),
                     ),
+                    context.dynamicVerticalSpace(0.06),
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

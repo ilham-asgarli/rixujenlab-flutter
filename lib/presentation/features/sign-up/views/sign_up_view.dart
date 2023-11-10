@@ -55,7 +55,11 @@ class SignUpView extends StatelessWidget {
                     Expanded(
                       child: Stack(
                         children: [
-                          Assets.image.icBg3.svg(fit: BoxFit.fill),
+                          Assets.image.icBg3Png.image(
+                            fit: BoxFit.fill,
+                            width: double.infinity,
+                            height: double.infinity,
+                          ),
                           SizedBox(
                             height: isKeyboardVisible
                                 ? context.safeHeight
@@ -90,8 +94,8 @@ class SignUpView extends StatelessWidget {
                                         SignUpField.values[index];
 
                                     return SignTextField(
-                                      textEditingController:
-                                          signUpField.controller,
+                                      textEditingController: signUpField
+                                          .controller(signUpViewModel),
                                       hintText: signUpField.hintText,
                                       obscureText: signUpField.obscureText,
                                       keyboardType: signUpField.keyboardType,

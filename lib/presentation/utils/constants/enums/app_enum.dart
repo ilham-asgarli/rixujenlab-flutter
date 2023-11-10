@@ -41,3 +41,9 @@ enum MyType {
   combination,
   normal,
 }
+
+enum TypeFeature {
+  definition,
+  care,
+  nutrition,
+}

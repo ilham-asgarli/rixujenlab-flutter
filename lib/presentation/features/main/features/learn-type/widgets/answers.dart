@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../utils/gen/assets.gen.dart';
+import '../../../../../../utils/gen/fonts.gen.dart';
 import '../../../../../utils/extensions/context_extension.dart';
+import '../state/learn_type_bloc.dart';
+import '../view-models/learn_type_view_model.dart';
 
 class Answers extends StatelessWidget {
-  const Answers({super.key});
+  final LearnTypeViewModel learnTypeViewModel;
+  final List<String> answers;
+
+  const Answers({
+    super.key,
+    required this.answers,
+    required this.learnTypeViewModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +53,32 @@ class Answers extends StatelessWidget {
             ),
             ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: 5,
+              itemCount: answers.length,
               itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  width: context.width * 0.01,
-                  height: context.height * 0.05,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(
-                      color: const Color(0xFF534E3C),
-                      width: 2,
+                return GestureDetector(
+                  onTap: () {
+                    learnTypeViewModel.learnTypeBloc.add(GetNewQuestion(
+                      answer: ["A", "B", "C", "D", "E"][index],
+                    ));
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: context.dynamicWidth(0.01),
+                    height: context.dynamicHeight(0.05),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        color: const Color(0xFF534E3C),
+                        width: 2,
+                      ),
+                    ),
+                    child: Text(
+                      answers[index],
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontFamily: FontFamily.abiah,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 );

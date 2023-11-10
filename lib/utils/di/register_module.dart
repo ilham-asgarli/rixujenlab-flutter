@@ -34,6 +34,6 @@ abstract class RegisterModule {
     ]);
 
   @preResolve
-  @lazySingleton
+  @singleton
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
 }

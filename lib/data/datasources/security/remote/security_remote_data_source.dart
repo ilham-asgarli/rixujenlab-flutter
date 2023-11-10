@@ -58,7 +58,7 @@ class SecurityRemoteDataSource {
       return false;
     }
 
-    if (userQuerySnap.docs[1].data().password ==
+    if (userQuerySnap.docs.first.data().password ==
         sha256.convert(utf8.encode(password)).toString()) {
       return true;
     }

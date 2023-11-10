@@ -27,6 +27,7 @@ void main() async {
 
 Future<void> init() async {
   HttpOverrides.global = MyHttpOverrides();
+
   await Future.wait([
     Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -37,6 +38,7 @@ Future<void> init() async {
     configureDependencies(),
     universal.get().init(),
   ]);
+
   final Directory storage = kIsWeb
       ? HydratedStorage.webStorageDirectory
       : getIt(instanceName: PathProviderConstants.applicationDocuments);

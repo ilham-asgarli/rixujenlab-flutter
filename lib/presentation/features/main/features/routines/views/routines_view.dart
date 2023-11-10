@@ -24,7 +24,11 @@ class RoutinesView extends StatelessWidget {
         child: BgAppName(
           child: Stack(
             children: [
-              Assets.image.icBg5.svg(fit: BoxFit.fill),
+              Assets.image.icBg5Png.image(
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: double.infinity,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: context.dynamicWidth(0.01),

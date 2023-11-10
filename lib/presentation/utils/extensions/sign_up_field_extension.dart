@@ -27,10 +27,11 @@ extension SignUpFieldExtension on SignUpField {
         SignUpField.password => TextInputType.text,
       };
 
-  TextEditingController get controller => switch (this) {
-        SignUpField.fullName => getIt<SignUpViewModel>().fullNameController,
-        SignUpField.userName => getIt<SignUpViewModel>().userNameController,
-        SignUpField.email => getIt<SignUpViewModel>().emailController,
-        SignUpField.password => getIt<SignUpViewModel>().passwordController,
+  TextEditingController controller(SignUpViewModel signUpViewModel) =>
+      switch (this) {
+        SignUpField.fullName => signUpViewModel.fullNameController,
+        SignUpField.userName => signUpViewModel.userNameController,
+        SignUpField.email => signUpViewModel.emailController,
+        SignUpField.password => signUpViewModel.passwordController,
       };
 }

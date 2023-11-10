@@ -21,7 +21,11 @@ class MainView extends StatelessWidget {
       drawer: Drawer(
         child: Stack(
           children: [
-            Assets.image.icBg.svg(fit: BoxFit.fill),
+            Assets.image.icBgPng.image(
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
+            ),
           ],
         ),
       ),
@@ -31,7 +35,11 @@ class MainView extends StatelessWidget {
             child: BgAppName(
               child: Stack(
                 children: [
-                  Assets.image.icBg2.svg(fit: BoxFit.fill),
+                  Assets.image.icBg2Png.image(
+                    fit: BoxFit.fill,
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: context.dynamicWidth(0.01),

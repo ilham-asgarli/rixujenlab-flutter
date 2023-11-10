@@ -21,8 +21,9 @@ extension SignInFieldExtension on SignInField {
         SignInField.password => TextInputType.text,
       };
 
-  TextEditingController get controller => switch (this) {
-        SignInField.email => getIt<SignInViewModel>().emailController,
-        SignInField.password => getIt<SignInViewModel>().passwordController,
+  TextEditingController controller(SignInViewModel signInViewModel) =>
+      switch (this) {
+        SignInField.email => signInViewModel.emailController,
+        SignInField.password => signInViewModel.passwordController,
       };
 }

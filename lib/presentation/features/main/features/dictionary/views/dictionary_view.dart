@@ -21,7 +21,11 @@ class DictionaryView extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Assets.image.icBg7.svg(fit: BoxFit.fill),
+            Assets.image.icBg7Png.image(
+              fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
+            ),
             Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(
@@ -31,8 +35,8 @@ class DictionaryView extends StatelessWidget {
                   children: [
                     context.dynamicVerticalSpace(0.11),
                     Text(
-                      "${context.l10n.skincareDictionaryTitle}",
-                      style: TextStyle(
+                      context.l10n.skincareDictionaryTitle,
+                      style: const TextStyle(
                         fontFamily: FontFamily.kudryashevDisplaySans,
                         fontSize: 30,
                         fontWeight: FontWeight.w900,
@@ -40,8 +44,8 @@ class DictionaryView extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "${context.l10n.skincareDictionaryDescription}",
-                      style: TextStyle(
+                      context.l10n.skincareDictionaryDescription,
+                      style: const TextStyle(
                         fontFamily: FontFamily.kudryashevDisplaySans,
                         fontSize: 20,
                         fontWeight: FontWeight.w900,

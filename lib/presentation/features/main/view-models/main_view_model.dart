@@ -1,4 +1,4 @@
 import 'package:injectable/injectable.dart';
 
-@LazySingleton()
+@injectable
 class MainViewModel {}
