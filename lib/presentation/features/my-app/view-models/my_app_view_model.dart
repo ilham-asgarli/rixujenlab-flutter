@@ -20,13 +20,13 @@ class MyAppViewModel {
     routes: $appRoutes,
     navigatorKey: AppConstants.navigatorKey,
     initialLocation: () {
-      if (!(getIt<SharedPreferences>()
-              .getBool(SharedPreferencesConstants.signedIn) ??
-          false)) {
-        return SignUpViewRoute().location;
+      if (getIt<SharedPreferences>()
+              .getBool(SharedPreferencesConstants.firstOpen) ??
+          true) {
+        return CoverViewRoute().location;
       }
 
-      return MainViewRoute().location;
+      return null;
     }(),
     errorBuilder: (context, state) => const NotFoundNavigationView(),
     redirect: (BuildContext context, GoRouterState state) {

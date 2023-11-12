@@ -109,6 +109,12 @@ abstract class AppLocalizations {
   /// **'You don\'\'t have internet connection.'**
   String get noInternet;
 
+  /// No description provided for @lab.
+  ///
+  /// In en, this message translates to:
+  /// **'Lab'**
+  String get lab;
+
   /// No description provided for @mainMenuSkinTypeTitle.
   ///
   /// In en, this message translates to:
@@ -181,6 +187,12 @@ abstract class AppLocalizations {
   /// **'Sign In'**
   String get signIn;
 
+  /// No description provided for @guess.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess'**
+  String get guess;
+
   /// No description provided for @fullName.
   ///
   /// In en, this message translates to:
@@ -204,6 +216,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password'**
   String get password;
+
+  /// No description provided for @continue_.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continue_;
 
   /// No description provided for @skincare.
   ///
@@ -318,12 +336,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'UPLOAD PHOTO'**
   String get skincareDictionaryUpload;
-
-  /// No description provided for @skincareDictionarySearch.
-  ///
-  /// In en, this message translates to:
-  /// **'SEARCH MANUALLY'**
-  String get skincareDictionarySearch;
 
   /// No description provided for @skin.
   ///
@@ -990,6 +1002,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Eat foods rich in antioxidants to maintain skin health. Maintain a balanced diet with enough protein, vitamins and minerals.'**
   String get normalNutrition;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

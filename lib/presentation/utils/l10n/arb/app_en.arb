@@ -2,6 +2,7 @@
   "appName": "RixujenLab",
   "notFoundNavigation": "403",
   "noInternet": "You don''t have internet connection.",
+  "lab": "Lab",
   "mainMenuSkinTypeTitle": "Learn your skin type",
   "mainMenuSkinTypeDescription": "Learn your skin type to understand how to treat it",
   "mainMenuDictionaryTitle": "Skincare dictionary",
@@ -14,10 +15,12 @@
   "signInTitle": "Log in",
   "signUp": "Sign Up",
   "signIn": "Sign In",
+  "guess": "Guess",
   "fullName": "Full Name",
   "userName": "Username",
   "email": "Email",
   "password": "Password",
+  "continue_": "Continue",
   "skincare": "SKINCARE",
   "routines": "Routines",
   "steps": "steps",
@@ -37,7 +40,6 @@
   "skincareDictionaryDescription": "Dictionary",
   "skincareDictionaryPhoto": "TAKE A PHOTO",
   "skincareDictionaryUpload": "UPLOAD PHOTO",
-  "skincareDictionarySearch": "SEARCH MANUALLY",
   "skin": "Skin",
   "careTips": "Care Tips",
   "readMore": "READ MORE",
@@ -148,5 +150,6 @@
   "normal": "NORMAL",
   "normalDefinition": "This skin type is considered 'ideal' as it is neither too oily nor too dry. Pores are not prominent and the skin usually has a glowing and smooth appearance. Normal skin has a balanced moisture level.",
   "normalCare": "Follow a regular skincare routine to keep skin clean and moisturized. Use products with SPF protection daily and use a quality moisturizer to keep skin hydrated.",
-  "normalNutrition": "Eat foods rich in antioxidants to maintain skin health. Maintain a balanced diet with enough protein, vitamins and minerals."
+  "normalNutrition": "Eat foods rich in antioxidants to maintain skin health. Maintain a balanced diet with enough protein, vitamins and minerals.",
+  "search": "Search"
 }

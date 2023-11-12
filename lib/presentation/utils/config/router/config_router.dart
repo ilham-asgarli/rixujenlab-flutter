@@ -2,10 +2,16 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../utils/di/injectable.dart';
+import '../../../features/cover/views/cover_view.dart';
+import '../../../features/main/features/dictionary/features/search-history/features/search-ingredients/features/search-ingredient-details/views/search_ingredient_details_view.dart';
+import '../../../features/main/features/dictionary/features/search-history/features/search-ingredients/views/serach_ingredients_view.dart';
+import '../../../features/main/features/dictionary/features/search-history/views/search_history_view.dart';
+import '../../../features/main/features/dictionary/features/search/views/search_view.dart';
 import '../../../features/main/features/dictionary/views/dictionary_view.dart';
 import '../../../features/main/features/learn-type/features/my-type/views/my_type_view.dart';
 import '../../../features/main/features/learn-type/views/learn_type_view.dart';
 import '../../../features/main/features/routines/views/routines_view.dart';
+import '../../../features/main/features/test-results/views/test_results_view.dart';
 import '../../../features/main/features/tips/features/more-tips/views/more_tips_view.dart';
 import '../../../features/main/features/tips/views/tips_view.dart';
 import '../../../features/main/views/main_view.dart';
@@ -21,6 +27,24 @@ part 'config_router.g.dart';
   routes: [
     TypedGoRoute<DictionaryViewRoute>(
       path: RouterConstants.dictionary,
+      routes: [
+        TypedGoRoute<SearchViewRoute>(
+          path: RouterConstants.search,
+        ),
+        TypedGoRoute<SearchHistoryViewRoute>(
+          path: RouterConstants.searchHistory,
+          routes: [
+            TypedGoRoute<SearchIngredientsViewRoute>(
+              path: RouterConstants.searchIngredients,
+              routes: [
+                TypedGoRoute<SearchIngredientDetailsViewRoute>(
+                  path: RouterConstants.searchIngredientDetails,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ],
     ),
     TypedGoRoute<LearnTypeViewRoute>(
       path: RouterConstants.learnType,
@@ -41,6 +65,9 @@ part 'config_router.g.dart';
         ),
       ],
     ),
+    TypedGoRoute<TestResultsViewRoute>(
+      path: RouterConstants.testResults,
+    ),
   ],
 )
 @immutable
@@ -49,6 +76,19 @@ class MainViewRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) {
     return MainView(
       mainViewModel: getIt(),
+    );
+  }
+}
+
+@TypedGoRoute<CoverViewRoute>(
+  path: RouterConstants.cover,
+)
+@immutable
+class CoverViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return CoverView(
+      coverViewModel: getIt(),
     );
   }
 }
@@ -142,6 +182,56 @@ class MyTypeViewRoute extends GoRouteData {
     return MyTypeView(
       myTypeViewModel: getIt(),
       myType: myType,
+    );
+  }
+}
+
+@immutable
+class SearchViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return SearchView(
+      searchViewModel: getIt(),
+    );
+  }
+}
+
+@immutable
+class TestResultsViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return TestResults(
+      testResultsViewModel: getIt(),
+    );
+  }
+}
+
+@immutable
+class SearchHistoryViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return SearchHistoryView(
+      searchHistoryViewModel: getIt(),
+    );
+  }
+}
+
+@immutable
+class SearchIngredientsViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return SearchIngredientsView(
+      searchIngredientsViewModel: getIt(),
+    );
+  }
+}
+
+@immutable
+class SearchIngredientDetailsViewRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return SearchIngredientDetailsView(
+      searchIngredientDetailsViewModel: getIt(),
     );
   }
 }

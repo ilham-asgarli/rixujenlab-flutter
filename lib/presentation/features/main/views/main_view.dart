@@ -17,6 +17,8 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    mainViewModel.setOpened();
+
     return Scaffold(
       drawer: Drawer(
         child: Stack(

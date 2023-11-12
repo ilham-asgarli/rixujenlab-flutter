@@ -14,6 +14,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noInternet => 'You don\'t have internet connection.';
 
   @override
+  String get lab => 'Lab';
+
+  @override
   String get mainMenuSkinTypeTitle => 'Learn your skin type';
 
   @override
@@ -50,6 +53,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signIn => 'Sign In';
 
   @override
+  String get guess => 'Guess';
+
+  @override
   String get fullName => 'Full Name';
 
   @override
@@ -60,6 +66,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get password => 'Password';
+
+  @override
+  String get continue_ => 'Continue';
 
   @override
   String get skincare => 'SKINCARE';
@@ -117,9 +126,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skincareDictionaryUpload => 'UPLOAD PHOTO';
-
-  @override
-  String get skincareDictionarySearch => 'SEARCH MANUALLY';
 
   @override
   String get skin => 'Skin';
@@ -453,4 +459,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get normalNutrition => 'Eat foods rich in antioxidants to maintain skin health. Maintain a balanced diet with enough protein, vitamins and minerals.';
+
+  @override
+  String get search => 'Search';
 }

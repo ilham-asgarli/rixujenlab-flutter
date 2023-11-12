@@ -1,5 +1,11 @@
 enum SizeProperty { width, height }
 
+enum Entry {
+  signIn,
+  signUp,
+  guess,
+}
+
 enum MainMenu {
   skinType,
   dictionary,
@@ -31,7 +37,7 @@ enum RoutinesSteps {
 enum SkincareDictionary {
   takeAPhoto,
   uploadPhoto,
-  searchManually,
+  search,
 }
 
 enum MyType {

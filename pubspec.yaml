@@ -110,7 +110,7 @@ dev_dependencies:
   json_serializable: ^6.7.1
   go_router_builder: ^2.3.4
   injectable_generator: ^2.4.1
-  retrofit_generator: ^8.0.3
+  retrofit_generator: ^8.0.4
   envied_generator: ^0.5.1
 
 # dependency_overrides:
@@ -192,6 +192,14 @@ flutter:
     - family: Abiah
       fonts:
         - asset: assets/font/Abiah-Regular.otf
+    - family: DejaVuSerif
+      fonts:
+        - asset: assets/font/DejaVuSerif-Regular.ttf
+        - asset: assets/font/DejaVuSerif-Bold.ttf
+          weight: 900
+    - family: Versailles
+      fonts:
+        - asset: assets/font/Versailles-Regular.ttf
 
   #   - family: Trajan Pro
   #     fonts:

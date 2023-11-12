@@ -7,6 +7,7 @@ the three routes /a, /a/b, and /a/b/c loaded, in that order.
 
 abstract class RouterConstants {
   static const notFound = "/404";
+  static const cover = "/cover";
   static const home = "/";
   static const signIn = "/signIn";
   static const signUp = "/signUp";
@@ -16,4 +17,9 @@ abstract class RouterConstants {
   static const tips = "tips";
   static const myType = "myType";
   static const moreTips = "moreTips";
+  static const search = "search";
+  static const testResults = "testResults";
+  static const searchHistory = "searchHistory";
+  static const searchIngredients = "searchIngredients";
+  static const searchIngredientDetails = "searchIngredientDetails";
 }
