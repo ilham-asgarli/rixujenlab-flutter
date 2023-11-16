@@ -26,7 +26,7 @@ class SearchIngredientsList extends StatelessWidget {
           onTap: () {
             if (save) {
               getIt<SaveSearchUseCase>()(SaveSearchUseCaseParams(
-                results: ingredientEntities.map((e) => e.id).toList(),
+                results: [ingredientEntities[index].id],
               ));
             }
             SearchIngredientDetailsViewRoute(
