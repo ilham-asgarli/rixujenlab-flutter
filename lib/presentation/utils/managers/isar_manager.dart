@@ -9,7 +9,7 @@ import '../../../utils/constants/di/path_provider_constants.dart';
 class IsarManager {
   final Directory applicationDocumentsDirectory;
 
-  const IsarManager({
+  IsarManager({
     @Named(PathProviderConstants.applicationDocuments)
     required this.applicationDocumentsDirectory,
   });

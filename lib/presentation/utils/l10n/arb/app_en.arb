@@ -11,10 +11,12 @@
   "mainMenuTipsDescription": "Valuable tips for your skin",
   "mainMenuRoutineTitle": "What is skincare routine?",
   "mainMenuRoutineDescription": "Sort the products correctly",
+  "testResults": "Test Results",
   "signUpTitle": "Enter your information",
   "signInTitle": "Log in",
   "signUp": "Sign Up",
   "signIn": "Sign In",
+  "signOut": "Sign Out",
   "guess": "Guess",
   "fullName": "Full Name",
   "userName": "Username",
@@ -151,5 +153,6 @@
   "normalDefinition": "This skin type is considered 'ideal' as it is neither too oily nor too dry. Pores are not prominent and the skin usually has a glowing and smooth appearance. Normal skin has a balanced moisture level.",
   "normalCare": "Follow a regular skincare routine to keep skin clean and moisturized. Use products with SPF protection daily and use a quality moisturizer to keep skin hydrated.",
   "normalNutrition": "Eat foods rich in antioxidants to maintain skin health. Maintain a balanced diet with enough protein, vitamins and minerals.",
-  "search": "Search"
+  "search": "Search",
+  "previousResults": "Previous Results"
 }

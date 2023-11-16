@@ -3,44 +3,44 @@ import '../../../utils/gen/assets.gen.dart';
 import '../constants/enums/app_enum.dart';
 import '../l10n/gen/app_localizations.dart';
 
-extension MyTypeExtension on MyType {
+extension MyTypeExtension on SkinType {
   String get title => switch (this) {
-        MyType.sensitive => getIt<AppLocalizations>().sensitive,
-        MyType.dry => getIt<AppLocalizations>().dry,
-        MyType.oily => getIt<AppLocalizations>().oily,
-        MyType.combination => getIt<AppLocalizations>().combination,
-        MyType.normal => getIt<AppLocalizations>().normal,
+        SkinType.sensitive => getIt<AppLocalizations>().sensitive,
+        SkinType.dry => getIt<AppLocalizations>().dry,
+        SkinType.oily => getIt<AppLocalizations>().oily,
+        SkinType.combination => getIt<AppLocalizations>().combination,
+        SkinType.normal => getIt<AppLocalizations>().normal,
       };
 
   String get icon => switch (this) {
-        MyType.sensitive => Assets.image.icSensitiveSkin.path,
-        MyType.dry => Assets.image.icDrySkin.path,
-        MyType.oily => Assets.image.icOilySkin.path,
-        MyType.combination => Assets.image.icCombinationSkin.path,
-        MyType.normal => Assets.image.icNormalSkin.path,
+        SkinType.sensitive => Assets.image.icSensitiveSkin.path,
+        SkinType.dry => Assets.image.icDrySkin.path,
+        SkinType.oily => Assets.image.icOilySkin.path,
+        SkinType.combination => Assets.image.icCombinationSkin.path,
+        SkinType.normal => Assets.image.icNormalSkin.path,
       };
 
   String get care => switch (this) {
-        MyType.sensitive => getIt<AppLocalizations>().sensitiveCare,
-        MyType.dry => getIt<AppLocalizations>().dryCare,
-        MyType.oily => getIt<AppLocalizations>().oilyCare,
-        MyType.combination => getIt<AppLocalizations>().combinationCare,
-        MyType.normal => getIt<AppLocalizations>().normalCare,
+        SkinType.sensitive => getIt<AppLocalizations>().sensitiveCare,
+        SkinType.dry => getIt<AppLocalizations>().dryCare,
+        SkinType.oily => getIt<AppLocalizations>().oilyCare,
+        SkinType.combination => getIt<AppLocalizations>().combinationCare,
+        SkinType.normal => getIt<AppLocalizations>().normalCare,
       };
 
   String get definition => switch (this) {
-        MyType.sensitive => getIt<AppLocalizations>().sensitiveDefinition,
-        MyType.dry => getIt<AppLocalizations>().dryDefinition,
-        MyType.oily => getIt<AppLocalizations>().oilyDefinition,
-        MyType.combination => getIt<AppLocalizations>().combinationDefinition,
-        MyType.normal => getIt<AppLocalizations>().normalDefinition,
+        SkinType.sensitive => getIt<AppLocalizations>().sensitiveDefinition,
+        SkinType.dry => getIt<AppLocalizations>().dryDefinition,
+        SkinType.oily => getIt<AppLocalizations>().oilyDefinition,
+        SkinType.combination => getIt<AppLocalizations>().combinationDefinition,
+        SkinType.normal => getIt<AppLocalizations>().normalDefinition,
       };
 
   String get nutrition => switch (this) {
-        MyType.sensitive => getIt<AppLocalizations>().sensitiveNutrition,
-        MyType.dry => getIt<AppLocalizations>().dryNutrition,
-        MyType.oily => getIt<AppLocalizations>().oilyNutrition,
-        MyType.combination => getIt<AppLocalizations>().combinationNutrition,
-        MyType.normal => getIt<AppLocalizations>().normalNutrition,
+        SkinType.sensitive => getIt<AppLocalizations>().sensitiveNutrition,
+        SkinType.dry => getIt<AppLocalizations>().dryNutrition,
+        SkinType.oily => getIt<AppLocalizations>().oilyNutrition,
+        SkinType.combination => getIt<AppLocalizations>().combinationNutrition,
+        SkinType.normal => getIt<AppLocalizations>().normalNutrition,
       };
 }

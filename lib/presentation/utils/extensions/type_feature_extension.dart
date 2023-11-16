@@ -5,14 +5,14 @@ import 'my_type_extension.dart';
 import 'string_extension.dart';
 
 extension TypeFeatureExtension on TypeFeature {
-  String title(MyType myType) => switch (this) {
+  String title(SkinType myType) => switch (this) {
         TypeFeature.definition =>
           '${myType.title.toFirstLetterCapitalized} ${getIt<AppLocalizations>().definition}: ',
         TypeFeature.care => "${getIt<AppLocalizations>().care}: ",
         TypeFeature.nutrition => "${getIt<AppLocalizations>().nutrition}: ",
       };
 
-  String description(MyType myType) => switch (this) {
+  String description(SkinType myType) => switch (this) {
         TypeFeature.definition => myType.definition,
         TypeFeature.care => myType.care,
         TypeFeature.nutrition => myType.nutrition,

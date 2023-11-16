@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../../utils/constants/app/app_constants.dart';
@@ -7,7 +6,6 @@ import '../../../../../utils/constants/app/app_constants.dart';
 part 'learn_type_event.dart';
 part 'learn_type_state.dart';
 
-@injectable
 class LearnTypeBloc extends Bloc<LearnTypeEvent, LearnTypeState> {
   LearnTypeBloc()
       : super(const LearnTypeNewQuestion(
@@ -15,6 +13,7 @@ class LearnTypeBloc extends Bloc<LearnTypeEvent, LearnTypeState> {
           index: 0,
         )) {
     on<GetNewQuestion>(onGetNewQuestion);
+    on<GetBack>(onGetBack);
     on<FinishTest>(onFinishTest);
   }
 
@@ -29,6 +28,13 @@ class LearnTypeBloc extends Bloc<LearnTypeEvent, LearnTypeState> {
     } else {
       add(FinishTest(answer: event.answer));
     }
+  }
+
+  void onGetBack(GetBack event, Emitter<LearnTypeState> emit) {
+    emit(LearnTypeNewQuestion(
+      chosenAnswers: List.from(state.chosenAnswers)..removeLast(),
+      index: state.index - 1,
+    ));
   }
 
   void onFinishTest(FinishTest event, Emitter<LearnTypeState> emit) {

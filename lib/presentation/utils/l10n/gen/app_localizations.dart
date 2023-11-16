@@ -163,6 +163,12 @@ abstract class AppLocalizations {
   /// **'Sort the products correctly'**
   String get mainMenuRoutineDescription;
 
+  /// No description provided for @testResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Results'**
+  String get testResults;
+
   /// No description provided for @signUpTitle.
   ///
   /// In en, this message translates to:
@@ -186,6 +192,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign In'**
   String get signIn;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
 
   /// No description provided for @guess.
   ///
@@ -1008,6 +1020,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search'**
   String get search;
+
+  /// No description provided for @previousResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous Results'**
+  String get previousResults;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

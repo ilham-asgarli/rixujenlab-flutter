@@ -66,4 +66,12 @@ flutter {
     source '../..'
 }
 
+// Added for firebase error
+configurations.all {
+    resolutionStrategy {
+        force 'com.squareup.okhttp:okhttp:2.7.5'
+        force 'com.squareup.okio:okio:1.17.5'
+    }
+}
+
 dependencies {}

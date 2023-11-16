@@ -13,6 +13,10 @@ class GetNewQuestion extends LearnTypeEvent {
   });
 }
 
+class GetBack extends LearnTypeEvent {
+  const GetBack();
+}
+
 class FinishTest extends LearnTypeEvent {
   final String answer;
 

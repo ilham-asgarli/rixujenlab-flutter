@@ -23,7 +23,7 @@ class AppName extends StatelessWidget {
         context.l10n.appName,
         style: const TextStyle(
           fontFamily: FontFamily.theSeasons,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.normal,
           fontStyle: FontStyle.italic,
         ),
       ),

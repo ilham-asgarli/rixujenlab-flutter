@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../utils/gen/assets.gen.dart';
 import '../../../../../../utils/gen/fonts.gen.dart';
@@ -57,7 +58,7 @@ class Answers extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: () {
-                    learnTypeViewModel.learnTypeBloc.add(GetNewQuestion(
+                    BlocProvider.of<LearnTypeBloc>(context).add(GetNewQuestion(
                       answer: ["A", "B", "C", "D", "E"][index],
                     ));
                   },

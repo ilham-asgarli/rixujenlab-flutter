@@ -51,10 +51,10 @@ class SignInView extends StatelessWidget {
             return Scaffold(
               resizeToAvoidBottomInset: false,
               body: SafeArea(
-                child: Back(
-                  child: Column(
-                    children: [
-                      Expanded(
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Back(
                         child: Stack(
                           children: [
                             Assets.image.icBg4Png.image(
@@ -124,11 +124,11 @@ class SignInView extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const AppName(
-                        colored: true,
-                      ),
-                    ],
-                  ),
+                    ),
+                    const AppName(
+                      colored: true,
+                    ),
+                  ],
                 ),
               ),
             );

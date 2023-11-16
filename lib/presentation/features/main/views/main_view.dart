@@ -6,6 +6,7 @@ import '../../../utils/extensions/context_extension.dart';
 import '../../../widgets/bg_app_name.dart';
 import '../view-models/main_view_model.dart';
 import '../widgets/menu_item.dart';
+import '../widgets/my_drawer.dart';
 
 class MainView extends StatelessWidget {
   final MainViewModel mainViewModel;
@@ -20,17 +21,7 @@ class MainView extends StatelessWidget {
     mainViewModel.setOpened();
 
     return Scaffold(
-      drawer: Drawer(
-        child: Stack(
-          children: [
-            Assets.image.icBgPng.image(
-              fit: BoxFit.fill,
-              width: double.infinity,
-              height: double.infinity,
-            ),
-          ],
-        ),
-      ),
+      drawer: const MyDrawer(),
       body: Builder(
         builder: (context) {
           return SafeArea(

@@ -5,7 +5,7 @@ import '../../../../../../../utils/extensions/type_feature_extension.dart';
 
 class TypeFeatureItem extends StatelessWidget {
   final TypeFeature typeFeature;
-  final MyType myType;
+  final SkinType myType;
 
   const TypeFeatureItem({
     super.key,

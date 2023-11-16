@@ -1,10 +1,11 @@
 import 'package:injectable/injectable.dart';
 
-import '../../../../domain/entities/ingredients_entity.dart';
+import '../../../../domain/entities/ingredient_entity.dart';
+import '../../../../domain/entities/ingredient_search_history_entity.dart';
 import '../../../../domain/repositories/ingredients/local/ingredients.local.repository.dart';
 import '../../../datasources/ingredients/local/ingredients.local.datasource.dart';
-import '../../../models/ingredients_model.dart';
-import '../../../utils/exceptions/local/custom.exception.dart';
+import '../../../models/ingredient_model.dart';
+import '../../../models/ingredient_search_history_model.dart';
 
 @LazySingleton(as: IngredientsLocalRepository)
 class IngredientsLocalRepositoryImpl implements IngredientsLocalRepository {
@@ -15,27 +16,73 @@ class IngredientsLocalRepositoryImpl implements IngredientsLocalRepository {
   });
 
   @override
-  Future<List<IngredientsEntity>> getIngredients({
+  Future<List<IngredientEntity>> getIngredients({
     String? search,
     int? limit,
   }) async {
-    List<IngredientsModel> ingredientModels =
+    List<IngredientModel> ingredientModels =
         await ingredientsLocalDataSource.getIngredients(
       search: search,
       limit: limit,
     );
 
     return ingredientModels
-        .map((e) => IngredientsEntity(name: e.name, description: e.description))
+        .map((e) => IngredientEntity(
+              id: e.isarId,
+              name: e.name,
+              description: e.description,
+            ))
         .toList();
   }
 
   @override
   Future<void> putIngredients() async {
-    try {
-      await ingredientsLocalDataSource.putIngredients();
-    } catch (e) {
-      throw CustomLocalException(message: e.toString());
-    }
+    await ingredientsLocalDataSource.putIngredients();
+  }
+
+  @override
+  Future<List<IngredientSearchHistoryEntity>> getSearchHistory({
+    int? limit,
+  }) async {
+    List<IngredientSearchHistoryModel> ingredientSearchHistoryModels =
+        await ingredientsLocalDataSource.getSearchHistory(
+      limit: limit,
+    );
+
+    return ingredientSearchHistoryModels
+        .map((e) => IngredientSearchHistoryEntity(
+              id: e.isarId,
+              image: e.image,
+              results: e.results,
+              createdAt: e.createdAt,
+            ))
+        .toList();
+  }
+
+  @override
+  Future<void> saveSearchHistory({
+    List<int>? image,
+    required List<int> results,
+  }) async {
+    await ingredientsLocalDataSource.saveSearchHistory(
+      image: image,
+      results: results,
+    );
+  }
+
+  @override
+  Future<List<IngredientEntity>> getIngredientsWithIds({
+    required List<int> ids,
+  }) async {
+    List<IngredientModel> ingredientModels =
+        await ingredientsLocalDataSource.getIngredientsWithIds(ids: ids);
+
+    return ingredientModels
+        .map((e) => IngredientEntity(
+              id: e.isarId,
+              name: e.name,
+              description: e.description,
+            ))
+        .toList();
   }
 }

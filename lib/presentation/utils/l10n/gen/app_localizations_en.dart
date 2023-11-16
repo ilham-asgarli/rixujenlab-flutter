@@ -41,6 +41,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mainMenuRoutineDescription => 'Sort the products correctly';
 
   @override
+  String get testResults => 'Test Results';
+
+  @override
   String get signUpTitle => 'Enter your information';
 
   @override
@@ -51,6 +54,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signIn => 'Sign In';
+
+  @override
+  String get signOut => 'Sign Out';
 
   @override
   String get guess => 'Guess';
@@ -462,4 +468,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get search => 'Search';
+
+  @override
+  String get previousResults => 'Previous Results';
 }

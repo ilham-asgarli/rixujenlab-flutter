@@ -5,13 +5,13 @@ import '../../../data/utils/exceptions/data.exception.dart';
 import '../../../data/utils/exceptions/local.exception.dart';
 import '../../../data/utils/exceptions/local/custom.exception.dart';
 import '../../../data/utils/exceptions/local/not_found.exception.dart';
-import '../../entities/ingredients_entity.dart';
+import '../../entities/ingredient_entity.dart';
 import '../../repositories/ingredients/local/ingredients.local.repository.dart';
 import '../../utils/usecase.dart';
 
 @LazySingleton()
 class SearchIngredientUseCase
-    extends UseCase<List<IngredientsEntity>, SearchIngredientUseCaseParams> {
+    extends UseCase<List<IngredientEntity>, SearchIngredientUseCaseParams> {
   final IngredientsLocalRepository ingredientsLocalRepository;
 
   const SearchIngredientUseCase({
@@ -19,13 +19,14 @@ class SearchIngredientUseCase
   });
 
   @override
-  Future<Either<DataException, List<IngredientsEntity>>> call(
+  Future<Either<DataException, List<IngredientEntity>>> call(
       [SearchIngredientUseCaseParams? params]) async {
     try {
       var response = await ingredientsLocalRepository.getIngredients(
         search: params?.search,
         limit: params?.limit,
       );
+
       return right(response);
     } on NotFoundLocalException catch (e) {
       return left(NotFoundLocalException(message: e.message));

@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../domain/entities/user_entity.dart';
 import '../../../../domain/repositories/security/remote/security.remote.repository.dart';
-import '../../../datasources/security/remote/security_remote_data_source.dart';
+import '../../../datasources/security/remote/security.remote.data.source.dart';
 import '../../../models/user_model.dart';
 import '../../../utils/exceptions/network/custom.exception.dart';
 import '../../../utils/exceptions/network/not_found.exception.dart';

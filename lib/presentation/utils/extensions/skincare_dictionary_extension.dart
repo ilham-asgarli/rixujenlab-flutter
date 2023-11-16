@@ -5,9 +5,9 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../../utils/di/injectable.dart';
 import '../../../utils/gen/assets.gen.dart';
+import '../../features/main/features/dictionary/view-models/dictionary_view_model.dart';
 import '../config/router/config_router.dart';
 import '../constants/enums/app_enum.dart';
-import '../helpers/google-ml-kit/google_ml_kit_helper.dart';
 import '../l10n/gen/app_localizations.dart';
 import 'context_extension.dart';
 
@@ -33,26 +33,27 @@ extension MainMenuExtension on SkincareDictionary {
           ),
       };
 
-  Function onTap(context) => switch (this) {
+  Function onTap(context, DictionaryViewModel dictionaryViewModel) =>
+      switch (this) {
         SkincareDictionary.takeAPhoto => () async {
             final file = await ImagePicker().pickImage(
               source: ImageSource.camera,
             );
 
-            if (file != null) {
-              String text = await getIt<GoogleMlKitHelper>()
-                  .readTextFromImage(File(file.path));
-            }
+            dictionaryViewModel.onImageSearch(
+              file != null ? File(file.path) : null,
+              context,
+            );
           },
         SkincareDictionary.uploadPhoto => () async {
             final file = await ImagePicker().pickImage(
               source: ImageSource.gallery,
             );
 
-            if (file != null) {
-              String text = await getIt<GoogleMlKitHelper>()
-                  .readTextFromImage(File(file.path));
-            }
+            dictionaryViewModel.onImageSearch(
+              file != null ? File(file.path) : null,
+              context,
+            );
           },
         SkincareDictionary.search => () {
             SearchViewRoute().go(context);

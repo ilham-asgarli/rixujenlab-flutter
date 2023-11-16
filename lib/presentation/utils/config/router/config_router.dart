@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../domain/entities/ingredient_entity.dart';
 import '../../../../utils/di/injectable.dart';
 import '../../../features/cover/views/cover_view.dart';
-import '../../../features/main/features/dictionary/features/search-history/features/search-ingredients/features/search-ingredient-details/views/search_ingredient_details_view.dart';
-import '../../../features/main/features/dictionary/features/search-history/features/search-ingredients/views/serach_ingredients_view.dart';
 import '../../../features/main/features/dictionary/features/search-history/views/search_history_view.dart';
+import '../../../features/main/features/dictionary/features/search-ingredients/features/search-ingredient-details/views/search_ingredient_details_view.dart';
+import '../../../features/main/features/dictionary/features/search-ingredients/views/search_ingredients_view.dart';
 import '../../../features/main/features/dictionary/features/search/views/search_view.dart';
 import '../../../features/main/features/dictionary/views/dictionary_view.dart';
 import '../../../features/main/features/learn-type/features/my-type/views/my_type_view.dart';
@@ -33,16 +34,12 @@ part 'config_router.g.dart';
         ),
         TypedGoRoute<SearchHistoryViewRoute>(
           path: RouterConstants.searchHistory,
-          routes: [
-            TypedGoRoute<SearchIngredientsViewRoute>(
-              path: RouterConstants.searchIngredients,
-              routes: [
-                TypedGoRoute<SearchIngredientDetailsViewRoute>(
-                  path: RouterConstants.searchIngredientDetails,
-                ),
-              ],
-            ),
-          ],
+        ),
+        TypedGoRoute<SearchIngredientsViewRoute>(
+          path: RouterConstants.searchIngredients,
+        ),
+        TypedGoRoute<SearchIngredientDetailsViewRoute>(
+          path: RouterConstants.searchIngredientDetails,
         ),
       ],
     ),
@@ -171,7 +168,7 @@ class MoreTipsViewRoute extends GoRouteData {
 
 @immutable
 class MyTypeViewRoute extends GoRouteData {
-  final MyType myType;
+  final SkinType myType;
 
   const MyTypeViewRoute({
     required this.myType,
@@ -218,19 +215,33 @@ class SearchHistoryViewRoute extends GoRouteData {
 
 @immutable
 class SearchIngredientsViewRoute extends GoRouteData {
+  final List<dynamic> $extra;
+
+  const SearchIngredientsViewRoute({
+    required this.$extra,
+  });
+
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return SearchIngredientsView(
       searchIngredientsViewModel: getIt(),
+      ingredientEntities: $extra,
     );
   }
 }
 
 @immutable
 class SearchIngredientDetailsViewRoute extends GoRouteData {
+  final IngredientEntity $extra;
+
+  const SearchIngredientDetailsViewRoute({
+    required this.$extra,
+  });
+
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return SearchIngredientDetailsView(
+      ingredientEntity: $extra,
       searchIngredientDetailsViewModel: getIt(),
     );
   }

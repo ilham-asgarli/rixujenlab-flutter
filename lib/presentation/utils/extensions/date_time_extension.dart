@@ -38,7 +38,7 @@ extension DateTimeExtension on DateTime {
   }
 
   String get ddMMyyyy {
-    final format = DateFormat('dd.MM.yyyy');
+    final format = DateFormat('dd/MM/yyyy');
     return format.format(this);
   }
 

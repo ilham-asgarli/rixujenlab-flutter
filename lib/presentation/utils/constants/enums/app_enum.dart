@@ -40,7 +40,7 @@ enum SkincareDictionary {
   search,
 }
 
-enum MyType {
+enum SkinType {
   sensitive,
   dry,
   oily,
@@ -52,4 +52,10 @@ enum TypeFeature {
   definition,
   care,
   nutrition,
+}
+
+enum MainDrawer {
+  signIn,
+  signUp,
+  testResults,
 }
