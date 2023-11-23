@@ -24,6 +24,7 @@ class SecurityRemoteRepositoryImpl implements SecurityRemoteRepository {
       }
 
       return UserEntity(
+        id: userModel.id,
         email: userModel.email,
         password: userModel.password,
         fullName: userModel.fullName,
@@ -35,32 +36,52 @@ class SecurityRemoteRepositoryImpl implements SecurityRemoteRepository {
   }
 
   @override
-  Future<bool> signIn({
+  Future<UserEntity?> signIn({
     required String email,
     required String password,
   }) async {
     try {
-      return await securityRemoteDataSource.signIn(
+      UserModel? userModel = await securityRemoteDataSource.signIn(
         email: email,
         password: password,
       );
+
+      if (userModel == null) {
+        return null;
+      }
+
+      return UserEntity(
+        id: userModel.id,
+        email: userModel.email,
+        password: userModel.password,
+        fullName: userModel.fullName,
+        userName: userModel.userName,
+      );
     } catch (e) {
-      return false;
+      return null;
     }
   }
 
   @override
-  Future<void> signUp({
+  Future<UserEntity> signUp({
     required String email,
     required String password,
     required String fullName,
     required String userName,
   }) async {
-    await securityRemoteDataSource.signUp(
+    UserModel userModel = await securityRemoteDataSource.signUp(
       email: email,
       password: password,
       fullName: fullName,
       userName: userName,
+    );
+
+    return UserEntity(
+      id: userModel.id,
+      email: userModel.email,
+      password: userModel.password,
+      fullName: userModel.fullName,
+      userName: userModel.userName,
     );
   }
 }

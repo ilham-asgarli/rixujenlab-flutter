@@ -3,14 +3,14 @@ import '../../../entities/user_entity.dart';
 abstract class SecurityRemoteRepository {
   Future<UserEntity> getUser({required String id});
 
-  Future<void> signUp({
+  Future<UserEntity> signUp({
     required String email,
     required String password,
     required String fullName,
     required String userName,
   });
 
-  Future<bool> signIn({
+  Future<UserEntity?> signIn({
     required String email,
     required String password,
   });

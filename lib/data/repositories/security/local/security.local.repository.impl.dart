@@ -20,6 +20,7 @@ class SecurityLocalRepositoryImpl implements SecurityLocalRepository {
 
     if (userModel != null) {
       return UserEntity(
+        id: userModel.id,
         email: userModel.email,
         password: userModel.password,
         fullName: userModel.fullName,

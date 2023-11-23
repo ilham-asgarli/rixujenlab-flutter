@@ -23,7 +23,7 @@ class SignInViewModel {
       ));
       res.fold(
         (l) => signInBloc.add(const FinishSignIn(signedIn: false)),
-        (r) => signInBloc.add(FinishSignIn(signedIn: r)),
+        (r) => signInBloc.add(FinishSignIn(signedIn: r != null)),
       );
     }
   }

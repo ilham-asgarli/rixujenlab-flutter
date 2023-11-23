@@ -14,7 +14,7 @@ class SecurityRemoteDataSource {
       .collection('users')
       .withConverter<UserModel>(
         fromFirestore: (snapshots, _) => UserModel.fromJson(snapshots.data()!),
-        toFirestore: (movie, _) => movie.toJson(),
+        toFirestore: (model, _) => model.toJson(),
       );
 
   Future<UserModel?> getUser(String id) async {
@@ -22,7 +22,7 @@ class SecurityRemoteDataSource {
     return userDocSnap.data();
   }
 
-  Future<void> signUp({
+  Future<UserModel> signUp({
     required String email,
     required String password,
     required String fullName,
@@ -46,23 +46,25 @@ class SecurityRemoteDataSource {
     );
 
     await usersRef.doc(id).set(userModel);
+
+    return userModel;
   }
 
-  Future<bool> signIn({
+  Future<UserModel?> signIn({
     required String email,
     required String password,
   }) async {
     var userQuerySnap = await usersRef.where("email", isEqualTo: email).get();
 
     if (userQuerySnap.size <= 0) {
-      return false;
+      return null;
     }
 
     if (userQuerySnap.docs.first.data().password ==
         sha256.convert(utf8.encode(password)).toString()) {
-      return true;
+      return userQuerySnap.docs.first.data();
     }
 
-    return false;
+    return null;
   }
 }
