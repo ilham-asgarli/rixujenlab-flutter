@@ -6,6 +6,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import '../../../../utils/di/injectable.dart';
 import '../../../utils/constants/app/app_constants.dart';
+import '../../../utils/extensions/context_extension.dart';
 import '../../../utils/l10n/gen/app_localizations.dart';
 import '../state/bloc/network/network_bloc.dart';
 import '../state/cubit/theme/theme_cubit.dart';
@@ -46,14 +47,21 @@ class MyAppView extends StatelessWidget {
             darkTheme: myAppViewModel.themeHelper
                 .getCustomTheme(context.watch<ThemeCubit>().state.appTheme)
                 .getTheme(ThemeMode.dark),
-            themeMode:
-                ThemeMode.light, // context.watch<ThemeCubit>().state.themeMode
+            themeMode: ThemeMode.light,
+            // context.watch<ThemeCubit>().state.themeMode
             scaffoldMessengerKey: AppConstants.scaffoldMessengerKey,
             builder: (context, child) {
               try {
                 getIt.registerLazySingleton(() => context);
               } catch (e) {}
-              return child!;
+              return MediaQuery(
+                data: context.mediaQuery.copyWith(
+                  textScaler: TextScaler.linear(
+                    context.textScaleFactor(baseWidth: 414),
+                  ),
+                ),
+                child: child!,
+              );
             },
           ),
         ),
