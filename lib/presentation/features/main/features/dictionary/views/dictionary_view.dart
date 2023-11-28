@@ -85,8 +85,21 @@ class DictionaryView extends StatelessWidget {
                     onTap: () {
                       SearchHistoryViewRoute().go(context);
                     },
-                    child: Assets.image.icHistory.image(
-                      width: context.dynamicWidth(0.1),
+                    child: Column(
+                      children: [
+                        Assets.image.icHistory.image(
+                          width: context.dynamicWidth(0.1),
+                          color: const Color(0xFFFF66C4),
+                        ),
+                        context.dynamicVerticalSpace(0.005),
+                        Text(
+                          context.l10n.history,
+                          style: const TextStyle(
+                            fontFamily: FontFamily.kudryashevDisplaySans,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -471,4 +471,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get previousResults => 'Previous Results';
+
+  @override
+  String get history => 'History';
 }

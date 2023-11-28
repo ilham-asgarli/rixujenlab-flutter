@@ -31,6 +31,7 @@ class MyTypeView extends StatelessWidget {
               fit: BoxFit.fill,
               width: double.infinity,
               height: double.infinity,
+              opacity: const AlwaysStoppedAnimation<double>(0.5),
             ),
             Column(
               children: [
@@ -42,6 +43,9 @@ class MyTypeView extends StatelessWidget {
                         children: [
                           context.dynamicVerticalSpace(0.08),
                           RichText(
+                            textScaler: TextScaler.linear(
+                              context.textScaleFactor(baseWidth: 414),
+                            ),
                             textAlign: TextAlign.center,
                             text: TextSpan(
                               text: myType.title,

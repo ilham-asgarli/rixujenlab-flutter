@@ -1026,6 +1026,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Previous Results'**
   String get previousResults;
+
+  /// No description provided for @history.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get history;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -29,6 +29,7 @@ class Back extends StatelessWidget {
                 },
             child: Assets.image.icBack.svg(
               width: context.dynamicWidth(0.08),
+              color: const Color(0xFFFF66C4),
             ),
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../utils/constants/enums/app_enum.dart';
+import '../../../../../../../utils/extensions/context_extension.dart';
 import '../../../../../../../utils/extensions/type_feature_extension.dart';
 
 class TypeFeatureItem extends StatelessWidget {
@@ -16,6 +17,9 @@ class TypeFeatureItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
+      textScaler: TextScaler.linear(
+        context.textScaleFactor(baseWidth: 414),
+      ),
       textAlign: TextAlign.center,
       text: TextSpan(
         text: typeFeature.title(myType),

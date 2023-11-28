@@ -51,6 +51,7 @@ class MainView extends StatelessWidget {
                               },
                               child: Assets.image.icUser.svg(
                                 height: context.dynamicHeight(0.05),
+                                color: const Color(0xFFFF66C4),
                               ),
                             ),
                           ),

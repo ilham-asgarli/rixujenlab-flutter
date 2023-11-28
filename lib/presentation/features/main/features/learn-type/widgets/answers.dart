@@ -28,29 +28,27 @@ class Answers extends StatelessWidget {
             Positioned(
               top: -context.height * 0.03,
               left: -context.width * 0.15,
-              child:
-                  Assets.image.icPurpleDot.svg(height: context.height * 0.05),
+              child: Assets.image.icPurpleDot.svg(width: context.width * 0.15),
             ),
             Positioned(
               top: context.height * 0.07,
-              left: -context.width * 0.12,
-              child: Assets.image.icBlueDot.svg(height: context.height * 0.05),
+              left: -context.width * 0.14,
+              child: Assets.image.icBlueDot.svg(width: context.width * 0.15),
             ),
             Positioned(
-              top: context.height * 0.18,
-              right: -context.width * 0.10,
-              child: Assets.image.icPinkDot.svg(height: context.height * 0.05),
+              top: context.height * 0.16,
+              right: -context.width * 0.12,
+              child: Assets.image.icPinkDot.svg(width: context.width * 0.12),
             ),
             Positioned(
-              top: context.height * 0.11,
-              right: -context.width * 0.14,
-              child: Assets.image.icGreenDot.svg(height: context.height * 0.04),
+              top: context.height * 0.10,
+              right: -context.width * 0.15,
+              child: Assets.image.icGreenDot.svg(width: context.width * 0.15),
             ),
             Positioned(
               top: context.height * 0.28,
-              left: -context.width * 0.13,
-              child:
-                  Assets.image.icYellowDot.svg(height: context.height * 0.04),
+              left: -context.width * 0.12,
+              child: Assets.image.icYellowDot.svg(width: context.width * 0.12),
             ),
             ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
@@ -67,7 +65,7 @@ class Answers extends StatelessWidget {
                     width: context.dynamicWidth(0.01),
                     height: context.dynamicHeight(0.05),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(100),
                       border: Border.all(
                         color: const Color(0xFF534E3C),
                         width: 2,
@@ -79,6 +77,7 @@ class Answers extends StatelessWidget {
                       style: const TextStyle(
                         fontFamily: FontFamily.abiah,
                         fontSize: 15,
+                        height: 0.9,
                       ),
                     ),
                   ),

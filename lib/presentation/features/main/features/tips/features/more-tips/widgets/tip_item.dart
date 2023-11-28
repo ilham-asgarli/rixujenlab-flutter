@@ -15,7 +15,7 @@ class TipItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.dynamicHeight(0.12),
+      height: context.dynamicHeight(0.135),
       padding: EdgeInsets.symmetric(
         vertical: context.dynamicHeight(0.009),
         horizontal: context.dynamicWidth(0.03),
@@ -34,6 +34,7 @@ class TipItem extends StatelessWidget {
             fontFamily: FontFamily.montserratArabic,
             fontSize: 14,
             color: Color(0xFF3F23A6),
+            height: 1.2,
           ),
         ),
       ),
