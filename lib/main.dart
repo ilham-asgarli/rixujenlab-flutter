@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:rixujenlab/presentation/utils/helpers/bloc/my_bloc_observer.dart';
 
 import 'domain/usecases/ingredients/put_ingredients_use_case.dart';
 import 'domain/utils/no_params.dart';
 import 'firebase_options.dart';
 import 'presentation/features/my-app/views/my_app_view.dart';
+import 'presentation/utils/helpers/bloc/my_bloc_observer.dart';
 import 'presentation/utils/helpers/http/my_http_overrides.dart';
 import 'presentation/utils/helpers/universal/universal_helper.dart'
     if (dart.library.io) 'presentation/utils/helpers/universal/universal_for_mobile.dart'
