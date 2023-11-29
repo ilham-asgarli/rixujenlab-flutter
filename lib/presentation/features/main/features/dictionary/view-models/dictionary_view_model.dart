@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../../domain/usecases/ingredients/search_ingredient_with_image_use_case.dart';
@@ -11,7 +12,9 @@ import '../../../../../utils/helpers/google-ml-kit/google_ml_kit_helper.dart';
 class DictionaryViewModel {
   void onImageSearch(File? file, context) async {
     if (file != null) {
-      String text = await getIt<GoogleMlKitHelper>().readTextFromImage(file);
+      RecognizedText recognizedText =
+          await getIt<GoogleMlKitHelper>().readTextFromImage(file);
+      String text = recognizedText.text;
 
       text = text.replaceAll("\n", " ");
 

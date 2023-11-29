@@ -5,14 +5,13 @@ import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class GoogleMlKitHelper {
-  Future<String> readTextFromImage(File image) async {
+  Future<RecognizedText> readTextFromImage(File image) async {
     final inputImage = InputImage.fromFile(image);
     final textRecognizer = TextRecognizer();
     final RecognizedText recognizedText =
         await textRecognizer.processImage(inputImage);
-    String text = recognizedText.text;
     textRecognizer.close();
 
-    return text;
+    return recognizedText;
   }
 }
