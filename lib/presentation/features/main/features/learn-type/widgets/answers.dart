@@ -26,27 +26,27 @@ class Answers extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Positioned(
-              top: -context.height * 0.03,
+              top: -context.height * 0.02,
               left: -context.width * 0.15,
               child: Assets.image.icPurpleDot.svg(width: context.width * 0.15),
             ),
             Positioned(
-              top: context.height * 0.07,
+              top: context.height * 0.08,
               left: -context.width * 0.14,
               child: Assets.image.icBlueDot.svg(width: context.width * 0.15),
             ),
             Positioned(
-              top: context.height * 0.16,
-              right: -context.width * 0.12,
-              child: Assets.image.icPinkDot.svg(width: context.width * 0.12),
-            ),
-            Positioned(
-              top: context.height * 0.10,
+              top: context.height * 0.12,
               right: -context.width * 0.15,
               child: Assets.image.icGreenDot.svg(width: context.width * 0.15),
             ),
             Positioned(
-              top: context.height * 0.28,
+              top: context.height * 0.18,
+              right: -context.width * 0.12,
+              child: Assets.image.icPinkDot.svg(width: context.width * 0.12),
+            ),
+            Positioned(
+              top: context.height * 0.3,
               left: -context.width * 0.12,
               child: Assets.image.icYellowDot.svg(width: context.width * 0.12),
             ),
@@ -63,7 +63,10 @@ class Answers extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.center,
                     width: context.dynamicWidth(0.01),
-                    height: context.dynamicHeight(0.05),
+                    height: context.dynamicHeight(0.055),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.dynamicWidth(0.01),
+                    ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       border: Border.all(
