@@ -139,6 +139,9 @@ android/app/google-services.json
 macos/firebase_app_id_file.json
 macos/Runner/GoogleService-Info.plist
 
+# Git
+*.git/
+
 # Environment
 *.env*
 !assets/env/.env.example
